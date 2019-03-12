@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('/fonts/Noto_Sans_JP/NotoSansJP-Regular.otf');
+}
+@font-face {
+    font-family: 'Lobster';
+    src: url('/fonts/Lobster/Lobster-Regular.ttf');
+}
+
+$notoSansJp-fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$lobster-fontFamily: 'Lobster', 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$base-fontSize: 14px;
+$base-color: #333;
+$base-letterSpacing: 0.01em;
+$base-lineHeight: 2;
+$base-sp-lineHeight: 1.7;
+$base-section-padding: 70px 3vw;
+$base-sp-section-padding: 70px 7vw;
+
+$blue-color: deepskyblue;
+$dark-blue-color: darkblue;
+$cork-color: #c49a6a;
+$right-gray-color: #efefef;
+
+$white-text-shadow: 5px 5px 20px #fff;
+
+$keytime-slideshow: 5s;
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes auto-photo {
+    0% {
+        transform: translateX(50vw);
+    }
+    50% {
+        transform: translateX(-70%);
+    }
+    100% {
+        transform: translateX(50vw);
+    }
+}
+
+@keyframes auto-photo-sp {
+    0% {
+        transform: translateX(50vw);
+    }
+    50% {
+        transform: translateX(-350vw);
+    }
+    100% {
+        transform: translateX(50vw);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@mixin mediaSp() {
+    @media (max-width: 480px) {
+        @content;
+    }
+}

@@ -1,0 +1,50 @@
+// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+// @font-face {
+//     font-family: "Open Sans";
+//     src: url("https://fonts.googleapis.com/css?family=Open+Sans");
+// }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition-property: all;
+}
+
+html {
+    font-family: $notoSansJp-fontFamily, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-size: $base-fontSize;
+    color: $base-color;
+    letter-spacing: $base-letterSpacing;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    &.is_no_scroll {
+        overflow: hidden;
+    }
+}
+
+body {
+    overflow: hidden;
+}
+
+a, a:link, a:visited {
+    color: $base-color;
+    text-decoration: none;
+    transition: all .3s;
+    &::before, &::after {
+        transition: all .3s;
+    }
+}
+
+main {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}

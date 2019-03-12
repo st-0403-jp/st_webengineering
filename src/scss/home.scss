@@ -1,0 +1,83 @@
+@charset 'utf-8';
+
+@import 'imports/config';
+@import 'imports/base';
+@import 'imports/common';
+
+.l_home_profile, .l_home_photo, .l_home_contact {
+    padding: $base-section-padding;
+    @include mediaSp() {
+        padding: $base-sp-section-padding;
+    }
+    .home_profile_btn, .home_photo_btn, .home_contact_btn {
+        margin-top: 50px;
+    }
+}
+.l_home_profile {
+    background-color: $cork-color;
+    overflow: hidden;
+    h2 {
+        color: #fff;
+    }
+    article {
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        p {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+    .home_profile_btn {
+        a {
+            color: #fff;
+            border-color: #fff;
+            &::after {
+                border-color: #fff;
+            }
+            &:hover {
+                background-color: #fff;
+                color: $cork-color;
+                border-color: #fff;
+                &::after {
+                    border-color: $cork-color;
+                }
+            }
+        }
+    }
+}
+.l_home_photo {
+    background-color: $right-gray-color;
+    .photo_list_box {
+        overflow: hidden;
+        ul {
+            font-size: 0;
+            display: flex;
+            width: 200vw;
+            max-width: 2400px;
+            animation-name: auto-photo;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            @include mediaSp() {
+                width: 400vw;
+                animation-name: auto-photo-sp;
+            }
+            li {
+                width: 100%;
+                padding-right: 3px;
+                overflow: hidden;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+.l_home_contact {
+    p {
+        text-align: center;
+    }
+}

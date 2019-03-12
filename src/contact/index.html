@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/contact.css">
+    <title>Contact | ST WebEngineering</title>
+</head>
+<body>
+    <div class="cmn_loading js_cmn_loading"></div>
+    <header class="globalheader">
+        <div class="logo"><a href="/">ST WebEngineering</a></div>
+        <nav>
+            <div class="hamburger js_hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/works">Works</a></li>
+                <li><a class="is_selected">Contact</a></li>
+                <li><a href="">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="lower_main">
+        <section class="l_contact_form">
+            <h1 class="cmn_heading01">Contact</h1>
+            <div class="body">
+                <p class="cmn_paragraph01">
+                ご意見、ご感想など、お気軽にお問い合わせくださいませ。<br>
+                メールフォームよりお願い致します。<br>
+                後ほど、こちらからメールでご連絡いたします。
+                </p>
+                <form action="/contact" method="post" id="contact_form">
+                    <div class="form_item">
+                        <div class="form_item_name">
+                            <label for="form_item_input_name">お名前</label>
+                        </div>
+                        <div class="form_item_input">
+                            <input type="text" name="name" id="form_item_input_name" value="" maxlength="30" required>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="form_item_name">
+                            <label for="">性別</label>
+                        </div>
+                        <div class="form_item_input">
+                            <input type="radio" name="gender" value="1" id="form_item_input_gender_male">
+                            <label for="form_item_input_gender_male">男性</label>
+                            <input type="radio" name="gender" value="2" id="form_item_input_gender_female">
+                            <label for="form_item_input_gender_female">女性</label>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="form_item_name">
+                            <label for="form_item_input_age">年代</label>
+                        </div>
+                        <div class="form_item_input">
+                            <select name="age" id="form_item_input_age">
+                                <option value="0" selected>選択してください</option>
+                                <option value="1">10〜19</option>
+                                <option value="2">20〜29</option>
+                                <option value="3">30〜39</option>
+                                <option value="4">40〜49</option>
+                                <option value="5">50〜59</option>
+                                <option value="6">60〜</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="form_item_name">
+                            <label for="form_item_input_mailaddress">メールアドレス</label>
+                        </div>
+                        <div class="form_item_input">
+                            <input type="email" name="mailaddress" id="form_item_input_mailaddress" required>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="form_item_name">
+                            <label for="form_item_input_content">内容</label>
+                        </div>
+                        <div class="form_item_input">
+                            <textarea name="content" rows="10" maxlength="200" id="form_item_input_content" placeholder="200文字以内"></textarea>
+                        </div>
+                    </div>
+                    <div class="form_item is_submit">
+                        <div class="form_item_input">
+                            <button type="submit" name="submit" id="form_item_input_submit" value="1">送信</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="back_to_home">
+            <div class="cmn_btn01">
+                <a href="/">
+                    <span>BACK&nbsp;TO&nbsp;Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="globalfooter">
+        <div class="sns">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="/img/common/glyph-logo_May2016.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="copy">
+            <small>&copy;&nbsp;2018&nbsp;Satoru&nbsp;Tanaka</small>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/contact.js"></script>
+</body>
+</html>
