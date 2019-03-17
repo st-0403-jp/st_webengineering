@@ -36,7 +36,7 @@
     function onLoad () {
         var $w = $(window);
         $w.on('load.home', function () {
-            slideshow();
+            // slideshow();
             autoScrollPhoto();
         });
     };
