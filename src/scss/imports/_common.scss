@@ -290,24 +290,59 @@
         height: 100%;
         display: flex;
         flex-wrap: wrap;
+        transform: translateX(-100vw);
         li {
             width: 25%;
             height: 100%;
+            position: relative;
             article {
                 width: 100%;
                 height: 100%;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                align-content: center;
+                h2 {
+                    width: 100%;
+                }
+            }
+            .paging {
+                width: 100%;
+                height: $icon-size-m;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                .prev, .next {
+                    font-family: FontAwesome;
+                    font-size: $icon-size-m;
+                    position: absolute;
+                    cursor: pointer;
+                }
+                .prev {
+                    &::before {
+                        content: '\f0a8';
+                    }
+                    left: 3vw;
+                }
+                .next {
+                    &::before {
+                        content: '\f0a9';
+                    }
+                    right: 3vw;
+                }
             }
         }
         .landing {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            align-content: center;
-            h2 {
-                width: 100%;
+        }
+        .about {
+            justify-content: center;
+            &_img {
+                font-size: 0;
+                width: 200px;
             }
         }
     }
