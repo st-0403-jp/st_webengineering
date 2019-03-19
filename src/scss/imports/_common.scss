@@ -179,7 +179,7 @@
     font-size: 3rem;
     text-align: center;
     letter-spacing: $base-letterSpacing * 5;
-    margin-bottom: 50px;
+    margin-bottom: 48px;
     @include mediaSp() {
         font-size: 2.5rem;
     }
@@ -285,27 +285,25 @@
 .slider {
     width: 400vw;
     height: 100vh;
-    ul {
+    &_list {
         width: 100%;
         height: 100%;
         display: flex;
         flex-wrap: wrap;
         transform: translateX(-100vw);
-        li {
+        &_item {
             width: 25%;
             height: 100%;
             position: relative;
             article {
                 width: 100%;
                 height: 100%;
+                padding: 0 3vw;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                align-content: center;
-                h2 {
+                position: relative;
+                h1,h2 {
                     width: 100%;
                 }
             }
@@ -337,12 +335,37 @@
             }
         }
         .landing {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
         }
         .about {
-            justify-content: center;
+            h2 {
+                padding-top: $globalheader-height + 16px;
+            }
+            &_contents {
+                display: flex;
+                justify-content: center;
+            }
+            &_img, &_list{
+                width: 100%;
+            }
             &_img {
                 font-size: 0;
-                width: 200px;
+                padding-left: 3rem;
+                padding-right: 1.5rem;
+                text-align: right;
+                img {
+                    width: 200px;
+                }
+            }
+            &_list {
+                padding-left: 1.5rem;
+                padding-right: 3rem;
+                &_item {
+                    font-size: 1.5rem;
+                }
             }
         }
     }
