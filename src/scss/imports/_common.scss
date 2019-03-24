@@ -231,7 +231,6 @@
     }
 }
 .cmn_paragraph01 {
-    text-align: justify;
     line-height: $base-lineHeight;
     @include mediaSp() {
         line-height: $base-sp-lineHeight;
@@ -282,6 +281,30 @@
 .back_to_home {
     padding: 70px 0;
 }
+.cmn_icon {
+    font-family: FontAwesome;
+    vertical-align: middle;
+    &.is_profile {
+        &::before {
+            content: '\f2bb';
+        }
+    }
+    &.is_vision {
+        &::before {
+            content: '\f5dc';
+        }
+    }
+    &.is_business {
+        &::before {
+            content: '\f0b1';
+        }
+    }
+    &.is_facebook {
+        &::before {
+            content: '\f082';
+        }
+    }
+}
 .slider {
     width: 400vw;
     height: 100vh;
@@ -290,7 +313,7 @@
         height: 100%;
         display: flex;
         flex-wrap: wrap;
-        transform: translateX(-100vw);
+        transform: translateX(-300vw);
         &_item {
             width: 25%;
             height: 100%;
@@ -298,7 +321,7 @@
             article {
                 width: 100%;
                 height: 100%;
-                padding: 0 3vw;
+                padding: $globalheader-height + 64px 3vw 0;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -341,9 +364,6 @@
             align-content: center;
         }
         .about {
-            h2 {
-                padding-top: $globalheader-height + 16px;
-            }
             &_contents {
                 display: flex;
                 justify-content: center;
@@ -364,8 +384,30 @@
                 padding-left: 1.5rem;
                 padding-right: 3rem;
                 &_item {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
+                    &:not(:last-child) {
+                        margin-bottom: 16px;
+                    }
+                    &_icon {
+                        margin-right: 16px;
+                    }
+                    a:hover {
+                        color: #f90;
+                    }
                 }
+            }
+        }
+        .works {
+            &_note {
+                text-align: center;
+            }
+        }
+        .contact {
+            text-align: center;
+            p {
+                margin-bottom: 24px;
+            }
+            &_form {
             }
         }
     }
