@@ -282,8 +282,12 @@
     padding: 70px 0;
 }
 .cmn_icon {
-    font-family: FontAwesome;
+    display: inline-block;
+    font-family: FontAwesome, FontAwesome Brands;
     vertical-align: middle;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     &.is_profile {
         &::before {
             content: '\f2bb';
@@ -300,9 +304,29 @@
         }
     }
     &.is_facebook {
-        &::before {
-            content: '\f082';
-        }
+        width: 1rem;
+        height: 1rem;
+        background-image: url(/img/common/sns/logo_facebook.png);
+    }
+    &.is_twitter {
+        width: 1rem;
+        height: 1rem;
+        background-image: url(/img/common/sns/logo_twitter.png);
+    }
+    &.is_instagram {
+        width: 1rem;
+        height: 1rem;
+        background-image: url(/img/common/sns/logo_instagram.png);
+    }
+    &.is_github {
+        width: 1rem;
+        height: 1rem;
+        background-image: url(/img/common/sns/logo_github.png);
+    }
+    &.is_qiita {
+        width: 1rem;
+        height: 1rem;
+        background-image: url(/img/common/sns/logo_qiita.png);
     }
 }
 .slider {
@@ -407,7 +431,21 @@
             p {
                 margin-bottom: 24px;
             }
-            &_form {
+            &_sns {
+                margin-top: 80px;
+                &_list {
+                    display: flex;
+                    justify-content: center;
+                    > li {
+                        &:not(:last-child) {
+                            margin-right: 3rem;
+                        }
+                        i {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+                }
             }
         }
     }
