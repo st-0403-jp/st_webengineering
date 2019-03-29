@@ -9,7 +9,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition-property: all;
 }
 
 html {
@@ -58,6 +57,6 @@ h1 {
     }
 }
 
-ul {
+ul, ol {
     list-style-type: none;
 }

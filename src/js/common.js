@@ -1,5 +1,6 @@
 
 function Utility () {
+    'use strict';
     var _self = this;
     this.cssTranstionDuration = function ($targetEl, time) {
         if (!($targetEl instanceof jQuery) && $targetEl.length === 0) {
@@ -20,6 +21,7 @@ function Utility () {
  * スクロールストップクラス
  */
 function NoScroll () {
+    'use strict';
     this.$html = null;
     this.init = function () {
         this.$html = $('html');
@@ -36,6 +38,7 @@ function NoScroll () {
  * モーダルクラス
  */
 function Modal () {
+    'use strict';
     var $body = $('body');
 
     this.el = '';
@@ -133,6 +136,7 @@ function Modal () {
  * 横幅でPCかSPか判定するクラス
  */
 function JudgeDevice () {
+    'use strict';
     this.isPc = null;
     this.isSp = null;
     this.init = function () {
@@ -151,6 +155,7 @@ function JudgeDevice () {
  * レスポンシブ用にリサイズイベント設置
  */
 function Responsive () {
+    'use strict';
     this.start = function (callback) {
         var $w = $(window);
         var resizeTimer = false;
@@ -171,6 +176,7 @@ function Responsive () {
  * ローディングを操作
  */
 function StopLoading () {
+    'use strict';
     var $w = $(window),
         $el = $('.js_cmn_loading'),
         transitionTime = 1000;
@@ -206,6 +212,7 @@ function StopLoading () {
  * 遷移時のオープニングアニメーション
  */
 function Opening () {
+    'use strict';
     var _self = this,
         $header = $('header'),
         $footer = $('footer'),
@@ -235,6 +242,7 @@ var OPENING = new Opening();
 
 // 共通処理
 (function () {
+    'use strict';
     NO_SCROLL.init();
     MODAL.init();
     JUDGE_DEVICE.init();
