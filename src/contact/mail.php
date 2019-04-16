@@ -15,20 +15,22 @@ $cleanPost = $_POST;
 $proc = isset($cleanPost['proc']) ? $cleanPost['proc'] : '';
 
 if ($proc === 'send') {
+    $company = isset($cleanPost['company']) ? $cleanPost['company'] : '';
     $name = isset($cleanPost['name']) ? $cleanPost['name'] : '';
     $gender = isset($cleanPost['gender']) ? $cleanPost['gender'] : '';
     $age = isset($cleanPost['age']) ? $cleanPost['age'] : '';
     $mailaddress = isset($cleanPost['mailaddress']) ? $cleanPost['mailaddress'] : '';
     $content = isset($cleanPost['content']) ? $cleanPost['content'] : '';
-    sendAdmin($name, $gender, $age, $mailaddress, $content);
-    sendUser($name, $gender, $age, $mailaddress, $content);
+    sendAdmin($company, $name, $gender, $age, $mailaddress, $content);
+    sendUser($company, $name, $gender, $age, $mailaddress, $content);
 }
 
-function sendAdmin ($name, $gender, $age, $mailaddress, $content) {
+function sendAdmin ($company, $name, $gender, $age, $mailaddress, $content) {
     $subject = 'ポートフォリオからお問い合わせが届きました。';
 
     $header = "From:".MAIL_ADMIN;
 
+    $message = "【貴社名】\n".$company."\n\n";
     $message = "【お名前】\n".$name."\n\n";
     $message .= "【性別】\n".$gender."\n\n";
     $message .= "【年代】\n".$age."\n\n";
@@ -38,14 +40,15 @@ function sendAdmin ($name, $gender, $age, $mailaddress, $content) {
     mb_send_mail(MAIL_ADMIN, $subject, $message, $header);
 };
 
-function sendUser ($name, $gender, $age, $mailaddress, $content) {
+function sendUser ($company, $name, $gender, $age, $mailaddress, $content) {
     $subject = 'お問い合わせ内容の確認';
 
     $header = "From:".MAIL_ADMIN;
 
-    $message = "フォトグラファー・・のホームページです。\nこの度はお問い合わせいただき、誠にありがとうございます。\n\n";
+    $message = "田中暁（ST WebEngineering）です。\nこの度はお問い合わせいただき、誠にありがとうございます。\n\n";
     $message .= "下記、お問い合わせいただきました内容です\n";
     $message .= "----------\n";
+    $message .= "【貴社名】\n".$company."\n\n";
     $message .= "【お名前】\n".$name."\n\n";
     $message .= "【性別】\n".$gender."\n\n";
     $message .= "【年代】\n".$age."\n\n";
@@ -56,7 +59,6 @@ function sendUser ($name, $gender, $age, $mailaddress, $content) {
     $message .= "いただきましたお問い合わせには、順次対応させていただきております。\n今しばらくお待ちくださいませ。\n\n";
     $message .= "なお、しばらく経っても連絡がない場合、\n大変恐縮ですが、再度ご連絡をいただけますと幸いでございます。\n\n";
     $message .= "どうぞよろしくお願いいたします。\n\n";
-    $message .= "※こちらのメールは送信専用です。返信はできませんのでご了承くださいませ。\n";
 
     mb_send_mail($mailaddress, $subject, $message, $header);
 };

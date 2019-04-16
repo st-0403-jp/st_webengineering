@@ -41,6 +41,7 @@
 
         $(form).on('submit', function (e) {
             // var form = e.target;
+            var inputCompany = form.company.value;
             var inputName = form.name.value;
             var inputGender = form.gender.value;
             var inputAge = form.age.value;
@@ -86,6 +87,7 @@
                 url: '/contact/mail.php',
                 data: {
                     proc: 'send',
+                    company: inputCompany,
                     name: inputName,
                     gender: inputGender,
                     age: inputAge,
@@ -95,6 +97,7 @@
             }).done(function () {
                 alert('送信しました。');
                 // location.reload();
+                form.company.value = '';
                 form.name.value = '';
                 $(form.gender).prop('checked', false);
                 form.age.options[0].selected = true;
