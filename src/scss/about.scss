@@ -4,55 +4,69 @@
 @import 'imports/base';
 @import 'imports/common';
 
-.l_profile_content {
+// TODO: commonにする？
+.lower_main {
     h1 {
         padding: 150px 0;
     }
-    .body {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: $base-section-padding;
-        background-color: $cork-color;
-        @include mediaSp() {
-            padding: $base-sp-section-padding;
-        }
-        &_left {
-            width: 30%;
-            padding-right: 3vw;
-            text-shadow: $white-text-shadow;
-            @include mediaSp() {
-                width: 100%;
-            }
-            figure {
-                max-width: 300px;
-                margin: 0 auto;
-                font-size: 0;
-                figcaption {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    margin-top: 10px;
-                }
-            }
-        }
-        &_right {
-            width: calc(80% - 30%);
-            @include mediaSp() {
-                width: 100%;
-                margin-top: 50px;
-            }
-            article {
-                padding-left: 10px;
-                p {
-                    color: #fff;
-                }
-            }
-        }
-    }
-    .decoration {
-        ul {
-            display: flex;
-            font-size: 0;
+}
+.page_about {
+    h2 {
+        font-size: 3rem;
+        .cmn_icon {
+            margin-right: 16px;
         }
     }
 }
+.l_profile {
+    padding: $base-section-padding;
+}
+// .l_profile_content {
+//     .body {
+//         display: flex;
+//         justify-content: center;
+//         flex-wrap: wrap;
+//         padding: $base-section-padding;
+//         background-color: $cork-color;
+//         @include mediaSp() {
+//             padding: $base-sp-section-padding;
+//         }
+//         &_left {
+//             width: 30%;
+//             padding-right: 3vw;
+//             text-shadow: $white-text-shadow;
+//             @include mediaSp() {
+//                 width: 100%;
+//             }
+//             figure {
+//                 max-width: 300px;
+//                 margin: 0 auto;
+//                 font-size: 0;
+//                 figcaption {
+//                     font-size: 1.3rem;
+//                     font-weight: bold;
+//                     margin-top: 10px;
+//                 }
+//             }
+//         }
+//         &_right {
+//             width: calc(80% - 30%);
+//             @include mediaSp() {
+//                 width: 100%;
+//                 margin-top: 50px;
+//             }
+//             article {
+//                 padding-left: 10px;
+//                 p {
+//                     color: #fff;
+//                 }
+//             }
+//         }
+//     }
+//     .decoration {
+//         ul {
+//             display: flex;
+//             font-size: 0;
+//         }
+//     }
+// }
