@@ -302,6 +302,11 @@
             content: '\f0b1';
         }
     }
+    &.is_heart {
+        &::before {
+            content: '\f4be';
+        }
+    }
     &.is_facebook {
         width: 1rem;
         height: 1rem;
