@@ -83,6 +83,16 @@
         .is_disabled {
             opacity: .3;
         }
+        .is_required {
+            position: relative;
+            &::after {
+                content: '必須';
+                display: inline-block;
+                padding: 2px;
+                color: #f00;
+                border: 1px solid #f00;
+            }
+        }
         input:focus, select:focus, button:focus, textarea:focus {
             outline: 0;
         }
