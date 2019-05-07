@@ -96,7 +96,31 @@
                 }
 
                 &_icon {
-                    font-size: 5rem;
+                    margin-bottom: 24px;
+                    
+                    &_circle {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto;
+                        font-size: 4rem;
+                        color: #fff;
+                        width: 8rem;
+                        height: 8rem;
+                        border-radius: 4rem;
+
+                        &.is_planing {
+                            background-color: #f08080;
+                        }
+
+                        &.is_coding {
+                            background-color: #ffa500;
+                        }
+
+                        &.is_system {
+                            background-color: #4682b4;
+                        }
+                    }
                 }
             }
         }

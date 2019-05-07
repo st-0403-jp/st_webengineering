@@ -307,6 +307,16 @@
             content: '\f4be';
         }
     }
+    &.is_coding {
+        &::before {
+            content: '\f126';
+        }
+    }
+    &.is_network {
+        &::before {
+            content: '\f6ff';
+        }
+    }
     &.is_facebook {
         width: 1rem;
         height: 1rem;
