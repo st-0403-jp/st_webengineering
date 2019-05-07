@@ -279,7 +279,8 @@
     }
 }
 .back_to_home {
-    padding: 70px 0;
+    padding: 72px 0;
+    text-align: center;
 }
 .cmn_icon {
     display: inline-block;
@@ -585,4 +586,12 @@
 
 .cmn_opening {
     opacity: 0;
+}
+
+.cmn_space_half {
+    padding-left: 6px;
+}
+
+.cmn_space_full {
+    padding-left: 12px;
 }

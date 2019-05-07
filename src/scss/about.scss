@@ -28,7 +28,7 @@
 }
 
 .l_profile, .l_vision, .l_business {
-    padding: $base-section-padding;
+    padding: 0 3vw 72px;
 }
 
 .profile_content {
@@ -42,6 +42,14 @@
     &_txt {
         width: calc(100% - 300px);
         padding-left: 32px;
+
+        &_history {
+            display: flex;
+
+            &_exp {
+                margin-left: 16px;
+            }
+        }
 
         p {
             margin-bottom: 24px;
@@ -84,6 +92,7 @@
 
             &_item {
                 width: 100%;
+                padding: 16px 0;
                 text-align: center;
 
                 &:not(:first-child) {
@@ -97,7 +106,7 @@
 
                 &_icon {
                     margin-bottom: 24px;
-                    
+
                     &_circle {
                         display: flex;
                         align-items: center;
