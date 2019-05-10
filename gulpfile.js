@@ -8,10 +8,10 @@ const sync = require('browser-sync');
 const srcPath = 'src/';
 const distPath = 'dist/';
 const srcPathList = {
-    html: srcPath + '**/*.{html,php}',
     scss: srcPath + 'scss/**/*.scss',
     js: srcPath + 'js/**/*.js',
     copy: [
+        srcPath + 'contact/mail.php',
         srcPath + 'img/**/*',
         srcPath + 'fonts/**/*',
         srcPath + 'lib/**/*'
@@ -22,11 +22,6 @@ gulp.task('del', () => {
     return del([distPath + '*']).then(() => {
         console.info('delete ok');
     });
-});
-
-gulp.task('html', () => {
-    return gulp.src([srcPathList.html], {base: srcPath})
-            .pipe(gulp.dest(distPath));
 });
 
 gulp.task('scss', () => {
@@ -50,7 +45,6 @@ gulp.task('copy', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch([srcPathList.html], ['html', 'sync:reload']);
     gulp.watch([srcPathList.scss], ['scss', 'sync:reload']);
     gulp.watch([srcPathList.js], ['js', 'sync:reload']);
 });
@@ -69,9 +63,9 @@ gulp.task('sync:reload', () => {
 });
 
 gulp.task('default', () => {
-    runSequence('del', ['html', 'scss', 'js', 'copy'], 'watch', 'sync');
+    runSequence(['scss', 'js', 'copy'], 'watch', 'sync');
 });
 
 gulp.task('build', () => {
-    runSequence('del', ['html', 'scss', 'js', 'copy']);
+    runSequence(['scss', 'js', 'copy']);
 });
