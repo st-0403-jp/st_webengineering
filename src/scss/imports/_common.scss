@@ -154,25 +154,28 @@
     }
 }
 .globalfooter {
-    padding: 100px 3vw 20px;
+    padding: 24px 3vw 24px;
     background-color: $base-color;
     color: #fff;
-    .sns {
-        ul {
-            font-size: 0;
-            display: flex;
-            justify-content: center;
-            li {
-                width: 30px;
-                margin-bottom: calc(30px / 2);
-                a {
-                    display: block;
-                }
+
+    a {
+        color: #fff !important;
+    }
+
+    &_nav_list {
+        display: flex;
+
+        &_item {
+            width: 80px;
+
+            a {
+                display: block;
             }
         }
     }
+    
     .copy {
-        text-align: center;
+        text-align: right;
     }
 }
 .cmn_heading01 {

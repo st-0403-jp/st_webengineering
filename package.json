@@ -4,12 +4,12 @@
   "description": "a",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "npm run delete",
+    "prestart": "run-p delete",
     "start": "run-s build:html build:sync",
     "build:html": "node compile.js",
     "build:sync": "gulp",
-    "delete": "gulp del"
+    "delete": "gulp del",
+    "watch:html": "watch \"npm run build:html\" ./src"
   },
   "author": "a",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "gulp-sass": "^4.0.2",
     "jsdom": "^15.0.0",
     "npm-run-all": "^4.1.5",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "watch": "^1.0.2"
   }
 }

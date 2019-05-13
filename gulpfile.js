@@ -54,7 +54,11 @@ gulp.task('sync', () => {
 		server: {
 			baseDir: distPath,
 			index: 'index.html'
-		}
+        },
+        files: [
+            `${distPath}/index.html`,
+            `${distPath}/**/index.html`
+        ]
 	});
 });
 
