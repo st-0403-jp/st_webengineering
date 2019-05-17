@@ -56,8 +56,8 @@ gulp.task('sync', () => {
 			index: 'index.html'
         },
         files: [
-            `${distPath}/index.html`,
-            `${distPath}/**/index.html`
+            `${distPath}index.html`,
+            `${distPath}**/index.html`
         ]
 	});
 });

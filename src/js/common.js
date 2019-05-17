@@ -17,6 +17,8 @@ function Utility () {
         $targetEl.css('animation-duration', (time / 1000) + 's');
     };
 };
+var UTILITY = new Utility();
+
 /**
  * スクロールストップクラス
  */
@@ -232,7 +234,6 @@ function Opening () {
 /**
  * クラスの初期化
  */
-var UTILITY = new Utility();
 var NO_SCROLL = new NoScroll();
 var MODAL = new Modal();
 var JUDGE_DEVICE = new JudgeDevice();
@@ -299,13 +300,8 @@ var OPENING = new Opening();
     cmnClickPhotoList();
 
     function cmnClickHamburger () {
-        if (JUDGE_DEVICE.isPc) {
-            return;
-        }
         var $el = $('.js_hamburger');
-        // .off('.hamburger')
         $el.off('.hamburger').on('click.hamburger', function () {
-            console.log('hamburger');
             if ($el.hasClass('is_show')) {
                 $el.removeClass('is_show');
             } else {
