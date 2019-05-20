@@ -46,15 +46,15 @@
         position: absolute;
         top: 0;
         left: 3vw;
-        
+
         a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 80px;
-            height: 80px;
+            width: 64px;
+            height: 64px;
             border-radius: 8px;
-            font-family: $lobster-fontFamily;
+            font-family: $baloo-fontFamily;
             font-size: 3rem;
             background-color: $base-color;
             color: #fff;
