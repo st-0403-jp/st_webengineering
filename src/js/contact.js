@@ -16,8 +16,6 @@
     checkInput();
 
     function checkRequired () {
-        // var $inputName = $('#form_item_input_name');
-        // var $inputMailaddress = $('#form_item_input_mailaddress');
         var $el = $('input:required');
         $el.on('invalid', function () {
             $(this).addClass(_invalidName);
@@ -96,13 +94,14 @@
                 }
             }).done(function () {
                 alert('送信しました。');
-                // location.reload();
                 form.company.value = '';
                 form.name.value = '';
                 $(form.gender).prop('checked', false);
                 form.age.options[0].selected = true;
                 form.mailaddress.value = '';
                 form.content.value = '';
+            }).fail(function () {
+                alert('送信失敗しました。');
             });
 
             return false;

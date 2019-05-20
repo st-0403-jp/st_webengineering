@@ -20,7 +20,7 @@ function Utility () {
 var UTILITY = new Utility();
 
 /**
- * スクロールストップクラス
+ * スクロールストップクラス TODO: リリース時削除
  */
 function NoScroll () {
     'use strict';
@@ -37,7 +37,7 @@ function NoScroll () {
 };
 
 /**
- * モーダルクラス
+ * モーダルクラス TODO: リリース時削除
  */
 function Modal () {
     'use strict';
@@ -234,8 +234,6 @@ function Opening () {
 /**
  * クラスの初期化
  */
-var NO_SCROLL = new NoScroll();
-var MODAL = new Modal();
 var JUDGE_DEVICE = new JudgeDevice();
 var RESPONSIVE = new Responsive();
 var STOP_LOADING = new StopLoading();
@@ -244,60 +242,12 @@ var OPENING = new Opening();
 // 共通処理
 (function () {
     'use strict';
-    NO_SCROLL.init();
-    MODAL.init();
     JUDGE_DEVICE.init();
     STOP_LOADING.init();
     OPENING.init();
 
     // ローディングをストップするイベント設置
     STOP_LOADING.setEvent(OPENING.do);
-
-    // 写真一覧のクリックモーダル
-    function cmnClickPhotoList () {
-        // 変数準備
-        var $el = $('.js_cmn_photo_list').find('li');
-        var targetImgSrcList = [];
-        function insertImg (targetNum) {
-            var targetSrc = '';
-            targetImgSrcList.forEach(function (data) {
-                if (data.number === targetNum) {
-                    targetSrc = data.src;
-                }
-            });
-            $('.' + MODAL.elBody).html('<div class="img" style="background-image:url(' + targetSrc + ');"></div>');
-        };
-
-        // 初期化
-        $el.each(function (idx, li) {
-            var liNumStr = (idx + 1) + '';
-            $(li).data('number', liNumStr);
-            targetImgSrcList.push({
-                number: liNumStr,
-                src: $(li).find('img').attr('src')
-            });
-        });
-
-        // 写真のクリックイベント
-        $el.on('click', function () {
-            var targetLiNum = $(this).data('number');
-            $('.' + MODAL.elCurrent).html(targetLiNum);
-            $('.' + MODAL.elAll).html(targetImgSrcList.length);
-
-            insertImg(targetLiNum);
-            MODAL.show();
-            NO_SCROLL.do();
-        });
-
-        // ページングイベント
-        MODAL.onPaging(insertImg);
-
-        // スクロールストップ
-        $('.' + MODAL.elClose).on('click.no.scroll.modal', function () {
-            NO_SCROLL.remove();
-        });
-    };
-    cmnClickPhotoList();
 
     function cmnClickHamburger () {
         var $el = $('.js_hamburger');
@@ -313,6 +263,5 @@ var OPENING = new Opening();
 
     RESPONSIVE.start(function () {
         JUDGE_DEVICE.init();
-        cmnClickHamburger();
     });
 })();

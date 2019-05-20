@@ -12,9 +12,9 @@ const loading = fs.readFileSync(`${componentsDir}_loading.html`, 'utf-8');
 
 const mainList = [
     srcDir + 'index.html',
-    srcDir +  'about/index.html',
-    srcDir +  'works/index.html',
-    srcDir +  'contact/index.html'
+    srcDir + 'about/index.html',
+    srcDir + 'works/index.html',
+    srcDir + 'contact/index.html'
 ];
 
 const useDoc = (dom) => {
