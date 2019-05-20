@@ -40,11 +40,13 @@
     // position: relative;
     position: absolute;
     z-index: 100;
+
     .logo {
         height: 100%;
         position: absolute;
         top: 0;
         left: 3vw;
+        
         a {
             display: flex;
             align-items: center;
@@ -64,10 +66,8 @@
                 content: attr(title);
             }
         }
-        @include mediaSp() {
-            font-size: 2rem;
-        }
     }
+
     nav {
         width: 50px;
         height: 100%;
@@ -75,6 +75,7 @@
         position: absolute;
         top: 0;
         right: 3vw;
+
         .hamburger {
             display: flex;
             flex-wrap: wrap;
@@ -86,6 +87,7 @@
             position: absolute;
             top: 0;
             right: 0;
+
             &.is_show {
                 .line:first-child {
                     transform: translateY(10px) rotate(45deg);
@@ -97,20 +99,23 @@
                     transform: translateY(-10px) rotate(-45deg);
                 }
                 & + ul {
-                    width: 150px;
+                    width: 100px;
                 }
             }
+
             .line {
                 display: inline-block;
                 width: 100%;
                 height: 2px;
                 background-color: $base-color;
                 transition: all .3s;
+
                 &:not(:last-child) {
                     margin-bottom: 8px;
                 }
             }
         }
+
         ul {
             width: 0;
             height: 200px;
@@ -123,12 +128,10 @@
             top: $globalheader-height;
             right: 0;
             overflow: hidden;
-            &.is_show {
-                width: 100px;
-            }
+
             li {
                 font-size: 1.7rem;
-                margin-left: 30px;
+
                 a {
                     display: block;
                     position: relative;
@@ -154,6 +157,14 @@
                         }
                     }
                 }
+
+                @include mediaSp() {
+                    font-size: 1.5rem;
+                }
+            }
+
+            @include mediaSp() {
+                height: 136px;
             }
         }
     }
@@ -170,17 +181,15 @@
     background-color: $base-color;
     color: #fff;
 
-    a {
-        color: #fff !important;
-    }
-
     &_nav_list {
         display: flex;
+        margin-bottom: 16px;
 
         &_item {
             width: 96px;
 
             a {
+                color: #fff;
                 display: block;
                 padding-left: 8px;
                 margin: 0 0 8px 8px;
@@ -202,6 +211,10 @@
                     &::before {
                         width: 100%;
                     }
+                }
+
+                @include mediaSp() {
+                    padding-left: 0px;
                 }
             }
         }
@@ -378,129 +391,6 @@
         width: 1rem;
         height: 1rem;
         background-image: url(/img/common/sns/logo_qiita.png);
-    }
-}
-.slider {
-    width: 400vw;
-    height: 100vh;
-    &_list {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        transition: all .3s;
-        // transform: translateX(-300vw);
-        &_item {
-            width: 25%;
-            height: 100%;
-            position: relative;
-            article {
-                width: 100%;
-                height: 100%;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                position: relative;
-                h1,h2 {
-                    width: 100%;
-                }
-                &:not(.landing) {
-                    padding: $globalheader-height + 64px 3vw 0;
-                }
-            }
-            .landing {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                align-content: center;
-            }
-            .about {
-                &_contents {
-                    display: flex;
-                    justify-content: center;
-                }
-                &_img, &_list{
-                    width: 100%;
-                }
-                &_img {
-                    font-size: 0;
-                    padding-left: 3rem;
-                    padding-right: 1.5rem;
-                    text-align: right;
-                    img {
-                        width: 200px;
-                    }
-                }
-                &_list {
-                    padding-left: 1.5rem;
-                    padding-right: 3rem;
-                    &_item {
-                        font-size: 2rem;
-                        &:not(:last-child) {
-                            margin-bottom: 16px;
-                        }
-                        &_icon {
-                            margin-right: 16px;
-                        }
-                        a:hover {
-                            color: #f90;
-                        }
-                    }
-                }
-            }
-            .works {
-                &_note {
-                    text-align: center;
-                }
-            }
-            .contact {
-                text-align: center;
-                p {
-                    margin-bottom: 24px;
-                }
-                &_sns {
-                    margin-top: 80px;
-                    &_list {
-                        display: flex;
-                        justify-content: center;
-                        > li {
-                            &:not(:last-child) {
-                                margin-right: 3rem;
-                            }
-                            i {
-                                width: 3rem;
-                                height: 3rem;
-                            }
-                        }
-                    }
-                }
-            }
-            .paging {
-                .prev, .next {
-                    font-family: FontAwesome;
-                    font-size: $icon-size-m;
-                    display: inline-block;
-                    height: $icon-size-m;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    margin: auto;
-                    cursor: pointer;
-                }
-                .prev {
-                    &::before {
-                        content: '\f0a8';
-                    }
-                    left: 3vw;
-                }
-                .next {
-                    &::before {
-                        content: '\f0a9';
-                    }
-                    right: 3vw;
-                }
-            }
-        }
     }
 }
 .cmn_modal {
