@@ -30,6 +30,10 @@
                 }
                 &:not(.landing) {
                     padding: $globalheader-height + 64px 3vw 0;
+
+                    @include mediaSp() {
+                        padding: $globalheader-height + 40px 3vw 0;
+                    }
                 }
             }
             .landing {
@@ -42,6 +46,10 @@
                 &_contents {
                     display: flex;
                     justify-content: center;
+
+                    @include mediaSp() {
+                        flex-wrap: wrap;
+                    }
                 }
                 &_img, &_list{
                     width: 100%;
@@ -51,6 +59,14 @@
                     padding-left: 3rem;
                     padding-right: 1.5rem;
                     text-align: right;
+
+                    @include mediaSp() {
+                        padding-left: 0;
+                        padding-right: 0;
+                        margin-bottom: 24px;
+                        text-align: center;
+                    }
+
                     img {
                         width: 200px;
                     }
@@ -58,16 +74,30 @@
                 &_list {
                     padding-left: 1.5rem;
                     padding-right: 3rem;
+
+                    @include mediaSp() {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
                     &_item {
                         font-size: 2rem;
+
+                        @include mediaSp() {
+                            width: 200px;
+                            margin: 0 auto;
+                        }
+
                         &:not(:last-child) {
                             margin-bottom: 16px;
+
+                            @include mediaSp() {
+                                margin-bottom: 8px;
+                            }
                         }
+
                         &_icon {
                             margin-right: 16px;
-                        }
-                        a:hover {
-                            color: #f90;
                         }
                     }
                 }
