@@ -84,6 +84,7 @@
                         font-size: 2rem;
 
                         @include mediaSp() {
+                            font-size: 1.5rem;
                             width: 200px;
                             margin: 0 auto;
                         }
@@ -109,27 +110,51 @@
             }
             .contact {
                 text-align: center;
+
                 p {
                     margin-bottom: 24px;
+
+                    @include mediaSp() {
+                        margin-bottom: 16px;
+                    }
                 }
+
                 &_sns {
                     margin-top: 80px;
+
+                    @include mediaSp() {
+                        margin-top: 32px;
+                    }
+
                     &_list {
                         display: flex;
                         justify-content: center;
+
                         > li {
+
                             &:not(:last-child) {
                                 margin-right: 3rem;
+
+                                @include mediaSp() {
+                                    margin-right: 1.5rem;
+                                }
                             }
+
                             i {
                                 width: 3rem;
                                 height: 3rem;
+
+                                @include mediaSp() {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
                             }
                         }
                     }
                 }
             }
             .paging {
+
                 .prev, .next {
                     font-family: FontAwesome;
                     font-size: $icon-size-m;
@@ -140,18 +165,27 @@
                     bottom: 0;
                     margin: auto;
                     cursor: pointer;
+
+                    @include mediaSp() {
+                        top: auto;
+                        bottom: 32px;
+                    }
                 }
+
                 .prev {
+                    left: 3vw;
+
                     &::before {
                         content: '\f0a8';
                     }
-                    left: 3vw;
                 }
+
                 .next {
+                    right: 3vw;
+
                     &::before {
                         content: '\f0a9';
                     }
-                    right: 3vw;
                 }
             }
         }
