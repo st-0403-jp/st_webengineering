@@ -4,6 +4,10 @@
 @import 'imports/base';
 @import 'imports/common';
 
+.home_btn {
+    text-align: center;
+}
+
 .slider {
     width: 400vw;
     height: 100vh;
@@ -32,7 +36,7 @@
                     padding: $globalheader-height + 64px 3vw 0;
 
                     @include mediaSp() {
-                        padding: $globalheader-height + 40px 3vw 0;
+                        padding: $globalheader-height + 48px 3vw 0;
                     }
                 }
             }
@@ -43,17 +47,21 @@
                 align-content: center;
             }
             .about {
+
                 &_contents {
                     display: flex;
                     justify-content: center;
+                    margin-bottom: 48px;
 
                     @include mediaSp() {
                         flex-wrap: wrap;
                     }
                 }
+
                 &_img, &_list{
                     width: 100%;
                 }
+
                 &_img {
                     font-size: 0;
                     padding-left: 3rem;
@@ -71,6 +79,7 @@
                         width: 200px;
                     }
                 }
+
                 &_list {
                     padding-left: 1.5rem;
                     padding-right: 3rem;
@@ -109,10 +118,10 @@
                 }
             }
             .contact {
-                text-align: center;
 
                 p {
                     margin-bottom: 24px;
+                    text-align: center;
 
                     @include mediaSp() {
                         margin-bottom: 16px;
