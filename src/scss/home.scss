@@ -40,12 +40,14 @@
                     }
                 }
             }
+
             .landing {
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
                 align-content: center;
             }
+
             .about {
 
                 &_contents {
@@ -113,6 +115,11 @@
                 }
             }
             .works {
+
+                &_contents {
+                    margin-bottom: 48px;
+                }
+
                 &_note {
                     text-align: center;
                 }
