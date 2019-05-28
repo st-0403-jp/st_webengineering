@@ -6,15 +6,22 @@
 
 // TODO: commonにする？
 .lower_main {
+
     h1 {
         padding: 150px 0;
     }
 }
 
 .page_about {
+
     h2 {
         font-size: 3rem;
         margin-bottom: 32px;
+
+        @include mediaSp() {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
 
         .cmn_icon {
             margin-right: 16px;
@@ -23,7 +30,6 @@
 }
 
 .page_about_paragraph {
-    font-size: 1.1rem;
     line-height: 1.5;
     text-align: justify;
 }
@@ -32,6 +38,10 @@
     max-width: 1000px;
     padding: 0 3vw 72px;
     margin: 0 auto;
+
+    @include mediaSp() {
+        padding: 0 3vw 32px;
+    }
 }
 
 .profile_content {
@@ -40,11 +50,21 @@
 
     &_img {
         width: 300px;
+
+        @include mediaSp() {
+            width: 100%;
+            margin-bottom: 16px;
+        }
     }
 
     &_txt {
         width: calc(100% - 300px);
         padding-left: 32px;
+
+        @include mediaSp() {
+            width: 100%;
+            padding-left: 0;
+        }
 
         &_history {
             display: flex;
@@ -66,6 +86,10 @@
 
         p {
             margin-bottom: 24px;
+
+            @include mediaSp() {
+                margin-bottom: 16px;
+            }
         }
     }
 }
@@ -75,10 +99,18 @@
     &_main {
         font-size: 2rem;
         font-weight: bold;
+
+        @include mediaSp() {
+            font-size: 1.5rem;
+        }
     }
 
     p {
         margin-bottom: 24px;
+
+        @include mediaSp() {
+            margin-bottom: 16px;
+        }
     }
 }
 
@@ -86,6 +118,10 @@
 
     &_txt {
         margin-bottom: 48px;
+
+        @include mediaSp() {
+            margin-bottom: 24px;
+        }
     }
 
     &_web {
@@ -95,6 +131,10 @@
             font-size: 2rem;
             padding-left: 16px;
             margin-bottom: 16px;
+
+            @include mediaSp() {
+                font-size: 1.5rem;
+            }
 
             &::before {
                 content: '';
@@ -112,10 +152,18 @@
 
         &_txt {
             margin-bottom: 40px;
+
+            @include mediaSp() {
+                margin-bottom: 16px;
+            }
         }
 
         &_description {
             display: flex;
+
+            @include mediaSp() {
+                flex-wrap: wrap;
+            }
 
             &_item {
                 width: 100%;
@@ -124,11 +172,20 @@
 
                 &:not(:first-child) {
                     border-left: 1px solid $base-color;
+
+                    @include mediaSp() {
+                        border-left: none;
+                        border-top: 1px solid $base-color;
+                    }
                 }
 
                 &_title {
                     font-size: 1.5rem;
                     margin-bottom: 24px;
+
+                    @include mediaSp() {
+                        // font-size: 1.3rem;
+                    }
                 }
 
                 &_icon {
@@ -144,6 +201,12 @@
                         width: 8rem;
                         height: 8rem;
                         border-radius: 4rem;
+
+                        @include mediaSp() {
+                            font-size: 2rem;
+                            width: 4rem;
+                            height: 4rem;
+                        }
 
                         &.is_planing {
                             background-color: #f08080;

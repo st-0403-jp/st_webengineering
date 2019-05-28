@@ -332,6 +332,10 @@
 .back_to_home {
     padding: 72px 0;
     text-align: center;
+
+    @include mediaSp() {
+        padding: 36px 0;
+    }
 }
 .cmn_icon {
     display: inline-block;
