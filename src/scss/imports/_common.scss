@@ -87,6 +87,7 @@
             position: absolute;
             top: 0;
             right: 0;
+            cursor: pointer;
 
             &.is_show {
                 .line:first-child {
@@ -177,6 +178,7 @@
     }
 }
 .globalfooter {
+    margin-top: 24px;
     padding: 24px 3vw 24px;
     background-color: $base-color;
     color: #fff;
