@@ -6,21 +6,26 @@
 
 .l_contact_form {
     h1 {
-        padding: 150px 0;
+        padding: 152px 0;
     }
+
     .body {
         padding: $base-section-padding;
+
         p {
             text-align: center;
         }
+
         @include mediaSp() {
             padding: $base-sp-section-padding;
         }
     }
+
     form {
         text-align: left;
         max-width: 700px;
         margin: 50px auto 0;
+
         .form_item {
             &:not(:last-child) {
                 margin-bottom: 30px;
@@ -34,11 +39,13 @@
                 border-left: 3px solid $base-color;
             }
         }
+
         input[type=text], input[type=email] {
             font-size: 1.3rem;
             width: 100%;
             padding: 5px 10px;
         }
+
         input[type=radio] {
             width: 20px;
             height: 20px;
@@ -50,17 +57,20 @@
                 vertical-align: middle;
             }
         }
+
         select {
             font-size: 1.3rem;
             width: 200px;
             height: 40px;
         }
+
         textarea {
             font-size: 1.3rem;
             width: 100%;
             resize: none;
             border-color: #ccc;
         }
+
         button[type=submit] {
             font-size: 1.3rem;
             width: 100px;
@@ -77,12 +87,15 @@
                 color: #fff;
             }
         }
+
         .is_invalid {
             border: 1px solid red;
         }
+
         .is_disabled {
             opacity: .3;
         }
+
         .is_required {
             position: relative;
             &::after {
@@ -93,6 +106,7 @@
                 border: 1px solid #f00;
             }
         }
+
         input:focus, select:focus, button:focus, textarea:focus {
             outline: 0;
         }
