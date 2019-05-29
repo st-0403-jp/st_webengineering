@@ -20,8 +20,17 @@ h1 {
             margin: 0 auto 56px;
             padding-top: 24px;
 
+            @include mediaSp() {
+                flex-wrap: wrap;
+                margin: 0 auto 32px;
+            }
+
             &_img {
                 width: 100%;
+
+                @include mediaSp() {
+                    margin-bottom: 24px;
+                }
             }
 
             &_info {
@@ -39,6 +48,10 @@ h1 {
 
                 .article_item_info {
                     margin-left: 32px;
+
+                    @include mediaSp() {
+                        margin-left: 0;
+                    }
                 }
             }
 

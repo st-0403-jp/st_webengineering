@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://frontend.gnavi.co.jp/guideline/html.html#progressive-enhancement -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>フロントエンド開発G 開発ガイドライン</title>
+    <link rel="stylesheet" type="text/css" href="./フロントエンド開発G 開発ガイドライン_files/github-markdown.css">
+    <link rel="shortcut icon" href="https://frontend.gnavi.co.jp/guideline/img/favicon.ico">
+</head>
+
+<body class="markdown-guideline-body">
+    <p class="title"><a href="https://frontend.gnavi.co.jp/guideline/">Front-end Guideline</a></p>
+    <p class="date">更新日 ：
+        2018.12.13
+    </p>
+    <h1 id="html-guideline">HTML Guideline</h1>
+<hr>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#html-guideline">HTML Guideline</a><ul>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#site-specification">サイト仕様</a><ul>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#progressive-enhancement">プログレッシブ・エンハンスメント</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#support-browser">ターゲットブラウザ</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#method">マークアップ仕様</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#dir-file-name">ディレクトリ・ファイル名</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#path">パスの記述方法</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#cache">キャッシュ対策</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#-google-analytics-">アクセス解析（google analytics）</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#-copyright-">コピーライト（copyright）</a></li>
+</ul>
+</li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#html5">HTML5</a><ul>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#validate">検証ツール</a></li>
+</ul>
+</li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#web-accessibility">Webアクセシビリティの考慮</a><ul>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#focus-visualization">focusの可視化</a></li>
+</ul>
+</li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#html-">HTML要素</a><ul>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#doctype-">DOCTYPE宣言</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#html-lang-">html[lang="<em>**</em>"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#title">title</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#meta-name-viewport-">meta[name="viewport"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#meta-name-format-detection-">meta[name="format-detection"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#meta-charset-">meta[charset="<em>**</em>"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#meta-name-description-">meta[name="description"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#meta-name-keywords-">meta[name="keywords"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#meta-http-equiv-x-ua-compatible-">meta[http-equiv="X-UA-Compatible"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#link-rel-canonical-">link[rel="canonical"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#link-rel-alternate-hreflang-x-">link[rel="alternate" hreflang="x"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#link-rel-shortcut-icon-">link[rel="shortcut icon"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#link-rel-apple-touch-icon-">link[rel="apple-touch-icon"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#link-rel-stylesheet-">link[rel="stylesheet"]</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#conditional-stylesheets">コンディショナルコメント</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#script">script</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#iframe">iframe</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#h1">h1</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#h2-h3-h4-h5-">h2, h3, h4, h5...</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#alt-">alt属性</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#title-">title属性</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#role-">role属性</a></li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#character%20reference">文字参照</a></li>
+</ul>
+</li>
+<li><a href="https://frontend.gnavi.co.jp/guideline/html.html#links">Links</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-a-name-site-specification-a-"><a name="site-specification">サイト仕様</a></h2>
+<h3 id="-a-name-progressive-enhancement-a-"><a name="progressive-enhancement">プログレッシブ・エンハンスメント</a></h3>
+<p>どのようなブラウザでも等価な情報を提供するが、等価な表現は保証しない。<br>CSSをオフにした状態でも可読性を保守するものとする。</p>
+<h3 id="-a-name-support-browser-a-"><a name="support-browser">ターゲットブラウザ</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>店舗・PFR</th>
+<th>その他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Internet Explorer 7.x、8.x（2017年7月まで）  <br>Internet Explorer 9.x、11.x  <br>Edge 最新  <br>Chrome 最新版  <br>Firefox 最新版</td>
+<td>Internet Explorer 11.x（デスクトップ版） <br>Edge 最新  <br>Chrome 最新版  <br>Firefox 最新版</td>
+</tr>
+<tr>
+<td>Mac</td>
+<td>Safari 最新<br>Chrome 最新</td>
+<td>Safari 最新<br>Chrome 最新</td>
+</tr>
+<tr>
+<td>iPhone</td>
+<td>iOS 8.x以上 Mobile Safari</td>
+<td>iOS 8.x以上 Mobile Safari</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>Android 4.2以上 標準ブラウザ</td>
+<td>Android 4.2以上 標準ブラウザ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-a-name-method-a-"><a name="method">マークアップ仕様</a></h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML規格</td>
+<td>HTML5</td>
+</tr>
+<tr>
+<td>XML宣言</td>
+<td>使用禁止</td>
+</tr>
+<tr>
+<td>文字コード</td>
+<td>UTF-8</td>
+</tr>
+<tr>
+<td>改行コード</td>
+<td>LF</td>
+</tr>
+<tr>
+<td>ファーストビュー</td>
+<td>横980px、縦550px</td>
+</tr>
+<tr>
+<td>ファースト印刷領域</td>
+<td>横640px、縦970px</td>
+</tr>
+<tr>
+<td>使用禁止文字</td>
+<td>半角カタカナ<br>機種依存文字<br>外字</td>
+</tr>
+<tr>
+<td>インデント</td>
+<td>4 spaces を標準<br>tab は使わない</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-a-name-dir-file-name-a-"><a name="dir-file-name">ディレクトリ・ファイル名</a></h3>
+<ul>
+<li>全て小文字で <code>a-z</code> <code>0-9</code> <code>.</code> <code>-</code> <code>_</code> を使用可能な文字とする。</li>
+<li>連番や日付はソートや拡張性を考慮する</li>
+</ul>
+<h3 id="-a-name-path-a-"><a name="path">パスの記述方法</a></h3>
+<ul>
+<li>index.htmlを指定する場合は、ファイル名を省略して <code>/</code> で終わること。</li>
+</ul>
+<pre><code>&lt;a href="index.html"&gt;トップ&lt;/a&gt;&lt;!-- NG --&gt;
+&lt;a href="/"&gt;トップ&lt;/a&gt;&lt;!-- OK --&gt;
+</code></pre><ul>
+<li><code>//</code> から始まるプロトコルレラティブURIを推奨する。</li>
+</ul>
+<pre><code>&lt;script src="http://x.gnst.jp/s.js"&gt;&lt;/script&gt; &lt;!-- 非推奨 --&gt;
+&lt;script src="//x.gnst.jp/s.js"&gt;&lt;/script&gt; &lt;!-- 推奨 --&gt;
+</code></pre><h3 id="-a-name-cache-a-"><a name="cache">キャッシュ対策</a></h3>
+<ul>
+<li>CSS/JS/画像ファイルを変更した場合はURLにパラメータを追加してキャッシュ対策をする。  </li>
+<li>パラメータにはタイムスタンプもしくはリビジョンなどユニークな値を指定する。</li>
+</ul>
+<pre><code>&lt;link rel="stylesheet" href="css/style.css?201500901"&gt; &lt;!-- タイムスタンプ --&gt;
+&lt;link rel="stylesheet" href="css/style.css?44011"&gt; &lt;!-- リビジョン --&gt;
+</code></pre><h3 id="-google-analytics-">アクセス解析（google analytics）</h3>
+<p>下記トラッキングコード（計測タグ）をbody要素末尾に埋め込むこと。</p>
+<pre><code>&lt;div style="display:none;height:0;position:relative;visibility:hidden;width:0;"&gt;
+&lt;script src="//x.gnst.jp/s.js"&gt;&lt;/script&gt;
+&lt;script&gt;('localhost' !== location.hostname) &amp;&amp; document.write(unescape("%3Cscript src='//site.gnavi.co.jp/analysis/sc_"+getScSubdom()+".js'%3E%3C/script%3E"));&lt;/script&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="-copyright-">コピーライト（copyright）</h3>
+<p>「<a href="https://gnavi-work.gnavi.co.jp/wiki/x/lVwTAQ">ぐるなび著作権表示（コピーライト）について</a>  ＞ 著作権表示規定」に則って対応すること。</p>
+<pre><code>&lt;p&gt;&lt;small&gt;&amp;copy; Gurunavi, Inc.&lt;/small&gt;&lt;/p&gt;
+</code></pre><hr>
+<h2 id="html5">HTML5</h2>
+<ul>
+<li><code>html5shiv.js</code> はHTMLの要素が変更されるので使用しない。</li>
+<li>終了タグを省略しない</li>
+<li>空要素の終端スラッシュは不要（記述しない）</li>
+<li>要素名と属性名は必ず小文字にする</li>
+<li>属性は原則として属性名と属性値の双方を記述する</li>
+<li>属性値は原則として<code>"</code>で囲むこと</li>
+</ul>
+<h3 id="-a-name-validate-a-"><a name="validate">検証ツール</a></h3>
+<p>仕様準拠の確認はHTML5に対応したバリデータを利用する。  </p>
+<ul>
+<li><a href="http://validator.w3.org/">http://validator.w3.org</a></li>
+<li><a href="http://html5.validator.nu/">http://html5.validator.nu/</a></li>
+</ul>
+<p>ただし、ソーシャルモジュールを使っている場合に限り、以下の警告は例外として許容する。</p>
+<ul>
+<li>iframe[frameborder]</li>
+<li>iframe[scrolling]</li>
+</ul>
+<p>SPページの場合は、ページの設計がモバイルフレンドリーであるか確認する。</p>
+<ul>
+<li><a href="https://search.google.com/search-console/mobile-friendly">モバイルフレンドリー テスト</a></li>
+</ul>
+<hr>
+<h2 id="-a-name-web-accessibility-web-a-"><a name="web-accessibility">Webアクセシビリティの考慮</a></h2>
+<ul>
+<li>人が見てわかりやすい（ヒューマンリーダブルが高い）</li>
+<li>機械が読みやすい（マシンリーダブルが高い）</li>
+</ul>
+<pre><code>Webアクセシビリティ
+├ ヒューマンリーダブル
+    - 情報の認識が容易
+    - 代替情報の最適化
+└ マシンリーダブル
+    - Web標準
+    - 的確なmeta情報
+    - 文書構造（アウトライン）
+    - セマンティックマークアップ
+    - WAI-ARIA
+    - 構造化データ
+</code></pre><h3 id="-a-name-focus-visualization-focus-a-"><a name="focus-visualization">focusの可視化</a></h3>
+<p>サイトのキーボード操作が出来なくなるため、outlineを単純に非表示にする処理を禁止する。</p>
+<ul>
+<li>推奨処理は下記の通り<ul>
+<li>デフォルトのまま</li>
+<li>非表示処理をする場合はデザインによる装飾を指定し、フォーカスがどこにあるのか常時確認可能な状態であること</li>
+</ul>
+</li>
+</ul>
+<pre><code>/* NG */
+* {
+  outline: none;
+}
+*:focus {
+  outline: 0;
+}
+</code></pre><hr>
+<h2 id="html-">HTML要素</h2>
+<pre><code>!DOCTYPE
+html
+  - lang
+├ head
+  ├　title
+  ├　meta
+    ├ charset
+    ├ name
+      - viewport
+      - format-detection
+      - description
+      - keywords
+      - twitter:
+    ├ property
+      - og:
+    └ http-equiv
+      - X-UA-Compatible
+  ├　link
+    ├ rel
+      - canonical
+      - alternate
+      - apple-touch-icon
+      - stylesheet
+└ body
+  └　script
+</code></pre><ul>
+<li><code>xml宣言</code> 使用禁止</li>
+<li><code>style要素</code> 非推奨<ul>
+<li>できるだけ外部ファイルにまとめる</li>
+</ul>
+</li>
+</ul>
+<h3 id="doctype-">DOCTYPE宣言　</h3>
+<ul>
+<li>必須</li>
+<li>先頭に必ず配置する</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h3 id="html-lang-">html[lang="<em>**</em>"]</h3>
+<ul>
+<li>音声合成ツールの言語選択、および翻訳ツールの規則決定のため指定を推奨する</li>
+<li>日本語以外の文書は、別途lang属性を最適化すること</li>
+</ul>
+<pre><code>&lt;html lang="ja"&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th>言語</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>英語</td>
+<td>en</td>
+</tr>
+<tr>
+<td>簡体字</td>
+<td>zh-Hans</td>
+</tr>
+<tr>
+<td>繁体字</td>
+<td>zh-Hant</td>
+</tr>
+<tr>
+<td>ハングル</td>
+<td>ko</td>
+</tr>
+<tr>
+<td>タイ語</td>
+<td>th</td>
+</tr>
+<tr>
+<td>インドネシア語</td>
+<td>ko</td>
+</tr>
+<tr>
+<td>マレーシア語</td>
+<td>ms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="title">title</h3>
+<ul>
+<li>必須</li>
+<li>SEOガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/seo.html#title-">SEO Guideline &gt; title</a></li>
+</ul>
+<h3 id="meta-name-viewport-">meta[name="viewport"]</h3>
+<ul>
+<li><code>SP</code> 推奨</li>
+<li>特に指定がない場合は以下を指定する<ul>
+<li>width=device-width</li>
+<li>user-scalable=no</li>
+<li>initial-scale=1</li>
+<li>maximum-scale=1</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1"&gt;
+</code></pre><h3 id="meta-name-format-detection-">meta[name="format-detection"]</h3>
+<ul>
+<li><code>SP</code> 推奨</li>
+<li>特に指定がない場合は以下を指定する<ul>
+<li>telephone=no</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;meta name="format-detection" content="telephone=no"&gt;
+</code></pre><h3 id="meta-charset-">meta[charset="<em>**</em>"]</h3>
+<ul>
+<li>要素先頭で必ず配置する</li>
+</ul>
+<pre><code>&lt;meta charset="utf-8"&gt;
+</code></pre><h3 id="meta-name-description-">meta[name="description"]</h3>
+<ul>
+<li>推奨</li>
+<li>SEOガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/seo.html#meta-description">SEO Guideline &gt; meta-description</a></li>
+</ul>
+<h3 id="meta-name-keywords-">meta[name="keywords"]</h3>
+<ul>
+<li>推奨</li>
+<li>SEOガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/seo.html#meta-keywords">SEO Guideline &gt; meta-keywords</a></li>
+</ul>
+<h3 id="meta-http-equiv-x-ua-compatible-">meta[http-equiv="X-UA-Compatible"]</h3>
+<ul>
+<li><code>PC</code> 推奨</li>
+<li>インストールされているIEの最新バージョンの標準モード表示になるよう <code>content="IE=edge"</code> を設定する</li>
+<li>CSSやJSなどの外部ファイルの読み込みよりも前に記述する</li>
+</ul>
+<h3 id="link-rel-canonical-">link[rel="canonical"]</h3>
+<ul>
+<li>推奨</li>
+<li>重複URIの正規化が必要であれば記述する</li>
+<li>絶対パスで記述する</li>
+<li>重複URIの正規化が必要なケース<ul>
+<li>URLの表記に一貫性が保たれてない場合</li>
+<li>URLにパラメータが付与され、動的にURLが複数生成される場合</li>
+<li>PCとSP・FPで異なるURI構造をもつ場合（<a href="https://frontend.gnavi.co.jp/guideline/seo.html#link-alternate">SEO Guideline &gt; link-alternate</a> ）</li>
+</ul>
+</li>
+</ul>
+<h3 id="link-rel-alternate-hreflang-x-">link[rel="alternate" hreflang="x"]</h3>
+<ul>
+<li>任意</li>
+<li>グローバル対応している場合記述する</li>
+<li>ページが閲覧対象とする国・地域・言語を追加する</li>
+<li><code>link[rel="canonical"]</code>と組み合わせることで、個々のウェブページがどの国・言語のユーザーに閲覧されることを想定しているかということを検索エンジンへ伝えることが可能</li>
+</ul>
+<pre><code>&lt;link rel="alternate" href="https://gurunavi.com/" hreflang="en"&gt;
+&lt;link rel="alternate" href="https://gurunavi.com/zh-hans/" hreflang="zh-Hans"&gt;
+&lt;link rel="alternate" href="https://gurunavi.com/zh-hant/" hreflang="zh-Hant"&gt;
+&lt;link rel="alternate" href="https://gurunavi.com/ko/" hreflang="ko"&gt;
+&lt;link rel="alternate" href="https://gurunavi.com/th/" hreflang="th"&gt;
+&lt;link rel="alternate" href="https://gurunavi.com/id/" hreflang="id"&gt;
+&lt;link rel="alternate" href="https://gurunavi.com/ms/" hreflang="ms"&gt;
+</code></pre><h3 id="link-rel-shortcut-icon-">link[rel="shortcut icon"]</h3>
+<ul>
+<li>非推奨</li>
+<li>HTMLによる指定は明示せずに、各サービスのドキュメントルートに ぐるなび標準のファビコン を設置する</li>
+<li>各サービスでオリジナルのファビコンを用意する場合でも、ファビコン名は <code>favicon.ico</code> とする</li>
+</ul>
+<h3 id="link-rel-apple-touch-icon-">link[rel="apple-touch-icon"]</h3>
+<ul>
+<li><code>SP</code> 推奨</li>
+<li>オリジナルのアイコンに角丸の効果を加えて表示される</li>
+<li>Webサイトへのショートカットをホーム画面に追加した際に作られるブックマークアイコンになる</li>
+</ul>
+<pre><code>&lt;link rel="apple-touch-icon" href="//x.gnst.jp/webclip.png"&gt;
+</code></pre><h3 id="link-rel-stylesheet-">link[rel="stylesheet"]</h3>
+<ul>
+<li>CSSガイドラインを参照 → <a href="https://frontend.gnavi.co.jp/guideline/css.html">CSS Guideline</a>　ファイル数、読み込み位置</li>
+</ul>
+<h3 id="-a-name-conditional-stylesheets-a-"><a name="conditional-stylesheets">コンディショナルコメント</a></h3>
+<ul>
+<li>非推奨</li>
+</ul>
+<pre><code>&lt;!--[if IE 7]&gt;
+&lt;link rel="stylesheet" href="ie7.css"&gt;
+&lt;![endif]--&gt;
+
+&lt;!--[if lte IE 6]&gt;
+&lt;link rel="stylesheet" href="ie6.css"&gt;
+&lt;![endif]--&gt;
+</code></pre><h3 id="script">script</h3>
+<ul>
+<li>javascriptガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/javascript.html">JavaScript Guideline</a>　ファイル数、<code>&lt;script&gt;</code>タグの記述場所</li>
+</ul>
+<h3 id="iframe">iframe</h3>
+<ul>
+<li>非推奨</li>
+<li>ソーシャルモジュール以外では非推奨</li>
+<li>ターゲットブラウザでiframeの表示スタイルを保持するために下記の属性は必須で設定する<ul>
+<li>iframe[frameborder]</li>
+<li>iframe[scrolling]</li>
+</ul>
+</li>
+</ul>
+<h3 id="h1">h1</h3>
+<ul>
+<li>必須</li>
+<li>必ず1つ配置する</li>
+<li>ターゲットキーワードを必ず含むこと</li>
+<li>h1はbodyに対しての見出しなのでセクショニングコンテンツ（section, article, nav, aside)で囲まない</li>
+<li>SEOガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/seo.html#hx-">SEOガイドライン  &gt; hx</a></li>
+</ul>
+<h3 id="h2-h3-h4-h5-">h2, h3, h4, h5...</h3>
+<ul>
+<li>セクショニングコンテンツとペアで利用すること</li>
+<li>見出しレベルはページの上から順になること</li>
+</ul>
+<h3 id="alt-">alt属性</h3>
+<ul>
+<li>SEOガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/seo.html#alt-">SEOガイドライン  &gt; alt</a></li>
+</ul>
+<h3 id="title-">title属性</h3>
+<ul>
+<li>SEOガイドラインを参照　→　<a href="https://frontend.gnavi.co.jp/guideline/seo.html#title-">SEOガイドライン  &gt; title</a></li>
+</ul>
+<h3 id="role-">role属性</h3>
+<ul>
+<li>推奨</li>
+<li><p><code>role=banner</code></p>
+<ul>
+<li>header要素に追加するロール</li>
+<li>ロゴ/名前やサイト固有のその他の情報が含まれる</li>
+<li>ドキュメントで1回だけ使用できる</li>
+</ul>
+</li>
+<li><p><code>role="complementary"</code></p>
+<ul>
+<li>aside要素に追加するロール</li>
+<li>メインコンテンツと多少関係があるコンテンツを示す</li>
+</ul>
+</li>
+<li><p><code>role="navigation"</code></p>
+<ul>
+<li>nav要素に追加するロール</li>
+</ul>
+</li>
+<li><p><code>role="search"</code></p>
+<ul>
+<li>検索用form要素に追加するロール</li>
+</ul>
+</li>
+<li><p><code>role="contentinfo"</code></p>
+<ul>
+<li>対象はfooter要素に限らない</li>
+<li>著作権やプライバシーポリシー及びそれらのリンクを示す</li>
+<li>ドキュメントで1回だけ使用できる</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;header role="banner"&gt;
+&lt;aside role="complementary"&gt;
+&lt;nav role="navigation"&gt;
+&lt;form role="search"&gt;
+&lt;footer role="contentinfo"&gt;
+</code></pre><h3 id="-a-name-character-reference-a-"><a name="character-reference">文字参照</a></h3>
+<p>特殊文字や機種依存文字は参照文字に置き換えて記述すること  </p>
+<table>
+<thead>
+<tr>
+<th>文字</th>
+<th>文字参照</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td><code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td>©</td>
+<td><code>&amp;copy;</code></td>
+</tr>
+<tr>
+<td>®</td>
+<td><code>&amp;reg;</code></td>
+</tr>
+<tr>
+<td>¥</td>
+<td><code>&amp;yen;</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="links">Links</h2>
+<ul>
+<li>ぐるなび公式情報<ul>
+<li><a href="http://www.gnavi.co.jp/company/agreement/webuse.html">(PC) 企業情報ホーム &gt; 利用条件</a>  </li>
+<li><a href="http://www.gnavi.co.jp/company/english/agreement/webuse.html">(PC) Corporate Information &gt; Terms &amp; Conditions</a>  </li>
+<li><a href="http://manage.gnavi.co.jp/help/basic/admin/index_02.html">(PC) PFR &gt; レストランページ編集 - 困った時は &gt; 利用環境</a>  </li>
+<li><a href="http://mobile.gnavi.co.jp/iphone/company/device/">(SP) 対応端末について</a>  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>ぐるなびロゴ<ul>
+<li><a href="http://design.gnavi.co.jp/guide/bi.pdf">ぐるなび ブランドアイデンティティガイドライン(PDF)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>インデントについて参考<ul>
+<li><a href="http://sideeffect.kr/popularconvention#javascript">Javascript 統計</a>  </li>
+<li><a href="http://sideeffect.kr/popularconvention#php">PHP 統計</a>  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>HTML5<ul>
+<li><a href="https://www.w3.org/TR/html5/">W3C HTML5</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/">WHATWG（Web Hypertext Application Technology Working Group）</a></li>
+<li>FAQ：終端スラッシュについて　<a href="https://wiki.whatwg.org/wiki/FAQ#Should_I_close_empty_elements_with_.2F.3E_or_.3E.3F">WHATWG &gt; FAQ &gt; Should I close empty elements with /&gt; or &gt; ?</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>プロトコルについて<ul>
+<li><a href="https://google.github.io/styleguide/htmlcssguide.xml#Protocol">google-styleguide #Protocol</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>WAI-ARIA<ul>
+<li><a href="http://www.w3.org/TR/2015/WD-wai-aria-1.1-20151119/">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a></li>
+<li><a href="http://momdo.github.io/wai-aria-1.1/">Accessible Rich Internet Applications (WAI-ARIA) 1.1（日本語）</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Search Console ヘルプ<ul>
+<li><a href="https://support.google.com/webmasters/answer/189077?hl=ja">Search Console ヘルプ &gt; 言語や地域の URL に hreflang を使用する</a></li>
+<li><a href="https://support.google.com/webmasters/answer/139066?hl=ja&amp;rd=1">Search Console ヘルプ &gt; 正規URLを使用する </a></li>
+</ul>
+</li>
+</ul>
+
+
+
+</body></html>

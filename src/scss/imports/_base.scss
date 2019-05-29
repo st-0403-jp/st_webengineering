@@ -61,3 +61,8 @@ h1 {
 ul, ol {
     list-style-type: none;
 }
+
+input, textarea, select, button {
+    border: 1px solid $right-gray-color;
+    background-color: #fff;
+}
