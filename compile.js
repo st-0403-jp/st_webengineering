@@ -17,12 +17,29 @@ const mainList = [
     srcDir + 'contact/index.html'
 ];
 
+const makeUrl = (page) => {
+    const domain = 'https://www.sssatoru-t.info/';
+
+    let url = '';
+    if (page === 'home') {
+        url = domain;
+    } else {
+        url = `${domain}${page}/`;
+    }
+    return url;
+};
+
 const useDoc = (dom) => {
     return dom.window.document;
 };
 
 const generateHead = (page) => {
     const headDom = new JSDOM(head);
+    const url = makeUrl(page);
+
+    useDoc(headDom).querySelector('#ogTitle').content = `${page}`;
+    useDoc(headDom).querySelector('#ogUrl').content = `${url}`;
+    useDoc(headDom).querySelector('link[rel=canonical]').href = `${url}`;
     useDoc(headDom).querySelector('link[rel=stylesheet]').href = `/css/${page}.css`;
     useDoc(headDom).querySelector('title').innerHTML = `${page} | ST WebEngineering`;
     return useDoc(new JSDOM(headDom.serialize())).querySelector('head').innerHTML;
