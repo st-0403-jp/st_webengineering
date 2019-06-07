@@ -194,12 +194,12 @@
                             }
 
                             i {
-                                width: 3rem;
-                                height: 3rem;
+                                width: $icon-size-m;
+                                height: $icon-size-m;
 
                                 @include mediaSp() {
-                                    width: 2rem;
-                                    height: 2rem;
+                                    width: $icon-size-s;
+                                    height: $icon-size-s;
                                 }
                             }
                         }

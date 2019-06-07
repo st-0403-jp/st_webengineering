@@ -7,11 +7,12 @@
 .l_contact_form {
     
     h1 {
-        padding: 152px 0;
+        padding: 152px 0 0;
     }
 
     .body {
         padding: $base-section-padding;
+        padding-top: 0;
 
         p {
             text-align: center;
@@ -19,6 +20,7 @@
 
         @include mediaSp() {
             padding: $base-sp-section-padding;
+            padding-top: 0;
         }
     }
 
@@ -108,6 +110,84 @@
 
         input:focus, select:focus, button:focus, textarea:focus {
             outline: 0;
+        }
+    }
+}
+
+.sns {
+    &_wrap {
+        display: flex;
+        position: fixed;
+        bottom: 56px;
+        right: 0;
+    }
+
+    &_btn {
+        box-sizing: content-box;
+        width: $icon-size-m;
+        padding: 0 16px;
+
+        .prev, .next {
+            font-family: FontAwesome;
+            display: inline-block;
+            height: $icon-size-m;
+            font-size: $icon-size-m;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+            color: $orange-color;
+            visibility: hidden;
+
+            &.is_active {
+                visibility: visible;
+            }
+        }
+
+        .prev {
+
+            &::before {
+                content: '\f0a8';
+            }
+        }
+
+        .next {
+
+            &::before {
+                content: '\f0a9';
+            }
+        }
+    }
+
+    &_contents {
+        width: 0;
+        transition: all .3s;
+
+        &.is_open {
+            width: calc(#{$icon-size-m} * 5 + 8px * 5);
+
+            @include mediaSp() {
+                width: calc(#{$icon-size-s} * 5 + 8px * 5);
+            }
+        }
+
+        &_list {
+            display: flex;
+
+            li {
+                margin-right: 8px;
+            }
+
+            .cmn_icon {
+                width: $icon-size-m;
+                height: $icon-size-m;
+
+                @include mediaSp() {
+                    width: $icon-size-s;
+                    height: $icon-size-s;
+                }
+            }
         }
     }
 }

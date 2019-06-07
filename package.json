@@ -9,7 +9,8 @@
     "build:html": "node compile.js",
     "build:sync": "gulp",
     "delete": "gulp del",
-    "watch:html": "watch \"npm run build:html\" ./src"
+    "watch:html": "watch \"npm run build:html\" ./src",
+    "test": "gulp build"
   },
   "author": "a",
   "license": "ISC",

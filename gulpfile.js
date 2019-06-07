@@ -14,7 +14,8 @@ const srcPathList = {
         srcPath + 'contact/mail.php',
         srcPath + 'img/**/*',
         srcPath + 'fonts/**/*',
-        srcPath + 'lib/**/*'
+        srcPath + 'lib/**/*',
+        srcPath + 'favicon/*'
     ]
 };
 
@@ -41,6 +42,15 @@ gulp.task('js', () => {
 
 gulp.task('copy', () => {
     return gulp.src(srcPathList.copy, {base: srcPath})
+            .pipe(rename((path) => {
+                let checkDir = path.dirname;
+
+                if (checkDir === 'favicon') {
+                    checkDir = '';
+                }
+
+                path.dirname = checkDir;
+            }))
             .pipe(gulp.dest(distPath));
 });
 

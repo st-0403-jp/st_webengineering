@@ -109,4 +109,26 @@
     };
     onSubmit();
 
+    function onSns () {
+        var $contents = $('.js_sns_contents');
+        var $prev = $('.js_prev');
+        var $next = $('.js_next');
+
+        function toggleActive () {
+            $prev.toggleClass('is_active');
+            $next.toggleClass('is_active');
+        }
+
+        $prev.on('click.sns.prev', function () {
+            $contents.addClass('is_open');
+            toggleActive();
+        });
+
+        $next.on('click.sns.next', function () {
+            $contents.removeClass('is_open');
+            toggleActive();
+        });
+    }
+    onSns();
+
 })();
