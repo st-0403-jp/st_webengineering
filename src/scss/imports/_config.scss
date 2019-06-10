@@ -102,6 +102,42 @@ $keytime-slideshow: 5s;
     }
 }
 
+@keyframes landing {
+    0% {
+        transform: translateX(0%);
+    }
+    10% {
+        transform: translateX(-4%);
+    }
+    20% {
+        transform: translateX(-14%);
+    }
+    30% {
+        transform: translateX(-18%);
+    }
+    40% {
+        transform: translateX(-8%);
+    }
+    50% {
+        transform: translateX(-5%);
+    }
+    60% {
+        transform: translateX(-3%);
+    }
+    70% {
+        transform: translateX(-16%);
+    }
+    80% {
+        transform: translateX(-12%);
+    }
+    90% {
+        transform: translateX(-19%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 @keyframes spring-x-left {
     0% {
         transform: translateX(0%);

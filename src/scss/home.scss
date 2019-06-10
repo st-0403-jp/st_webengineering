@@ -4,6 +4,14 @@
 @import 'imports/base';
 @import 'imports/common';
 
+body {
+    background-color: $base-color;
+}
+
+.home_main {
+    transition: all 1s;
+}
+
 .home_btn {
     text-align: center;
 }
@@ -12,6 +20,7 @@
     width: 400vw;
     height: 100vh;
     overflow-y: scroll;
+    background-color: #fff;
 
     &_list {
         width: 100%;
@@ -242,5 +251,27 @@
                 }
             }
         }
+    }
+}
+
+.is_animation {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+    &_child {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: translateX(0%);
+        animation: landing 5s steps(1) 1;
     }
 }

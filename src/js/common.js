@@ -247,7 +247,7 @@ var OPENING = new Opening();
     OPENING.init();
 
     // ローディングをストップするイベント設置
-    STOP_LOADING.setEvent(OPENING.do);
+    // STOP_LOADING.setEvent(OPENING.do);
 
     function cmnClickHamburger () {
         var $el = $('.js_hamburger');
