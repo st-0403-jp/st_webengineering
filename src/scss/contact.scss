@@ -115,6 +115,7 @@
 }
 
 .sns {
+    
     &_wrap {
         display: flex;
         position: fixed;
@@ -140,6 +141,10 @@
             color: $orange-color;
             visibility: hidden;
 
+            @include mediaWide {
+                animation: spring-x-left 1s ease-in-out infinite;
+            }
+
             &.is_active {
                 visibility: visible;
             }
@@ -161,14 +166,24 @@
     }
 
     &_contents {
+        overflow: hidden;
         width: 0;
+        font-size: 0;
+        box-sizing: content-box;
         transition: all .3s;
+
+        @include mediaSp() {
+            padding: 8px 0;
+            border-radius: 40px 0 0 40px;
+            background-color: $orange-color;
+        }
 
         &.is_open {
             width: calc(#{$icon-size-m} * 5 + 8px * 5);
 
             @include mediaSp() {
                 width: calc(#{$icon-size-s} * 5 + 8px * 5);
+                padding-left: 16px;
             }
         }
 

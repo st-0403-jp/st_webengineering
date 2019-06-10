@@ -128,7 +128,7 @@
             $contents.removeClass('is_open');
             toggleActive();
         });
-    }
+    };
     onSns();
 
 })();

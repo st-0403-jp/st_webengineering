@@ -102,8 +102,26 @@ $keytime-slideshow: 5s;
     }
 }
 
+@keyframes spring-x-left {
+    0% {
+        transform: translateX(0%);
+    }
+    80% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 @mixin mediaSp() {
     @media (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin mediaWide() {
+    @media (min-width: 960px) {
         @content;
     }
 }

@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 const runSequence = require('run-sequence');
 const del = require('del');
 const sync = require('browser-sync');
@@ -37,6 +38,7 @@ gulp.task('scss', () => {
 
 gulp.task('js', () => {
     return gulp.src([srcPathList.js], {base: srcPath})
+            .pipe(uglify())
             .pipe(gulp.dest(distPath));
 });
 
