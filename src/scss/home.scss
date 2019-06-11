@@ -9,7 +9,7 @@ body {
 }
 
 .home_main {
-    transition: all 1s;
+    transition: all .5s;
 }
 
 .home_btn {
@@ -267,6 +267,10 @@ body {
     margin: auto;
     animation: landing 8s steps(1) 1;
 
+    &.is_sp {
+        animation: landing-sp 2s ease 1;
+    }
+
     &_child {
         position: absolute;
         top: 0;
@@ -274,5 +278,9 @@ body {
         margin: auto;
         transform: translate(0%, 0%);
         animation: landing-child 8s steps(1) 1;
+
+        &.is_sp {
+            animation: none;
+        }
     }
 }

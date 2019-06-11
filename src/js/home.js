@@ -5,14 +5,21 @@
         var $el = $('.js_is_animation');
         var nameTarget = 'is_animation';
         var nameTarget_child = 'is_animation_child';
+        var animationTime = 8000;
 
         $el.addClass(nameTarget).children().addClass(nameTarget_child);
+
+        if (JUDGE_DEVICE.isSp) {
+            $el.addClass('is_sp').children().addClass('is_sp');
+            animationTime = 2500;
+        }
+
         setTimeout(function () {
             $el.removeClass(nameTarget).children().removeClass(nameTarget_child);
             setTimeout(function () {
                 OPENING.do();
             }, 300);
-        }, 8000);
+        }, animationTime);
     };
 
     function slider () {

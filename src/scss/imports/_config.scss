@@ -155,26 +155,77 @@ $keytime-slideshow: 5s;
     50% { // 3
         transform: translate(-2%, 0%);
     }
-    55% {
+    52% {
+        transform: translate(-3%, 0%);
+    }
+    54% {
         transform: translate(-4%, 0%);
     }
-    60% {
+    56% {
+        transform: translate(-5%, 0%);
+    }
+    58% {
         transform: translate(-6%, 0%);
     }
-    65% {
+    60% {
+        transform: translate(-7%, 0%);
+    }
+    62% {
+        transform: translate(-8%, 0%);
+    }
+    64% {
+        transform: translate(-9%, 0%);
+    }
+    66% {
         transform: translate(-10%, 0%);
     }
+    68% {
+        transform: translate(-11%, 0%);
+    }
     70% {
+        transform: translate(-12%, 0%);
+    }
+    72% {
         transform: translate(-13%, 0%);
     }
-    75% {
+    74% {
+        transform: translate(-14%, 0%);
+    }
+    76% {
+        transform: translate(-15%, 0%);
+    }
+    78% {
         transform: translate(-16%, 0%);
     }
-    80% { // 4.8s
+    80% {
+        transform: translate(-17%, 0%);
+    }
+    82% {
+        transform: translate(-18%, 0%);
+    }
+    84% {
         transform: translate(-19%, 0%);
     }
     100% {
         transform: translate(-19%, 0%);
+    }
+}
+
+@keyframes landing-sp {
+    0% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(20%);
+    }
+    50% {
+        transform: translateX(-15%);
+    }
+    75% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
 
