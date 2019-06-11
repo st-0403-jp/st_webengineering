@@ -12,7 +12,7 @@
             setTimeout(function () {
                 OPENING.do();
             }, 300);
-        }, 5000);
+        }, 8000);
     };
 
     function slider () {

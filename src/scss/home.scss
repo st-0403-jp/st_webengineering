@@ -255,8 +255,8 @@ body {
 }
 
 .is_animation {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 100px;
     overflow: hidden;
     position: absolute;
@@ -265,13 +265,14 @@ body {
     bottom: 0;
     right: 0;
     margin: auto;
+    animation: landing 8s steps(1) 1;
 
     &_child {
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
-        transform: translateX(0%);
-        animation: landing 5s steps(1) 1;
+        transform: translate(0%, 0%);
+        animation: landing-child 8s steps(1) 1;
     }
 }
