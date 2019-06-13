@@ -6,6 +6,10 @@
 
 body {
     background-color: $base-color;
+
+    &.is_landing {
+        background-color: $orange-color;
+    }
 }
 
 .home_main {

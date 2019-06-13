@@ -16,6 +16,18 @@ function Utility () {
         time = time || 1000;
         $targetEl.css('animation-duration', (time / 1000) + 's');
     };
+    this.setLocalSt = function (key, value) {
+        if (key == null && value == null) {
+            return null;
+        }
+        return localStorage.setItem(key, JSON.stringify(value));
+    };
+    this.getLocalSt = function (key) {
+        if (key == null) {
+            return null;
+        }
+        return (localStorage.getItem(key)) ? JSON.parse(localStorage.getItem(key)) : null;
+    };
 };
 var UTILITY = new Utility();
 
@@ -208,6 +220,9 @@ function StopLoading () {
             }, transitionTime);
         });
     };
+    this.offEvent = function () {
+        $w.off('.stop.loading');
+    };
 };
 
 /**
@@ -247,7 +262,7 @@ var OPENING = new Opening();
     OPENING.init();
 
     // ローディングをストップするイベント設置
-    // STOP_LOADING.setEvent(OPENING.do);
+    STOP_LOADING.setEvent(OPENING.do);
 
     function cmnClickHamburger () {
         var $el = $('.js_hamburger');

@@ -1,12 +1,41 @@
 (function () {
     'use strict';
 
+    STOP_LOADING.offEvent();
+
+    $(window).on('load.home', function () {
+        STOP_LOADING.hide();
+        landing();
+    });
+
     function landing () {
         var $el = $('.js_is_animation');
+        var $body = $('body');
         var nameTarget = 'is_animation';
         var nameTarget_child = 'is_animation_child';
         var animationTime = 8000;
+        var getData = UTILITY.getLocalSt('landing');
+        var saveData = {
+            is: true,
+            date: toTime
+        };
 
+        var newDate = new Date();
+        var toTime = newDate.getTime();
+
+        newDate.setDate(newDate.getDate() + 7);
+        var storageDate = new Date(getData.date);
+
+        var calcDate = newDate.getDate() - storageDate.getDate()
+
+        if (getData && getData.is === true) {
+            setTimeout(function () {
+                OPENING.do();
+            }, 300);
+            return;
+        }
+
+        $body.addClass('is_landing');
         $el.addClass(nameTarget).children().addClass(nameTarget_child);
 
         if (JUDGE_DEVICE.isSp) {
@@ -18,8 +47,14 @@
             $el.removeClass(nameTarget).children().removeClass(nameTarget_child);
             setTimeout(function () {
                 OPENING.do();
+                $body.removeClass('is_landing');
             }, 300);
         }, animationTime);
+
+        $el.children().on('animationend', function () {
+            UTILITY.setLocalSt('landing', saveData);
+            return false;
+        });
     };
 
     function slider () {
@@ -54,10 +89,5 @@
         });
     };
     slider();
-
-    $(window).on('load.home', function () {
-        STOP_LOADING.hide();
-        landing();
-    });
 
 })();

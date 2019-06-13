@@ -8,9 +8,10 @@
     "start": "run-s build:html build:sync",
     "build:html": "node compile.js",
     "build:sync": "gulp",
+    "build:build": "gulp build",
     "delete": "gulp del",
-    "watch:html": "watch \"npm run build:html\" ./src",
-    "test": "gulp build"
+    "watch:html": "watch \"npm run build:html\" ./src/",
+    "test": "run-p delete build:build"
   },
   "author": "a",
   "license": "ISC",

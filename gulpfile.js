@@ -57,25 +57,24 @@ gulp.task('copy', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch([srcPathList.scss], ['scss', 'sync:reload']);
-    gulp.watch([srcPathList.js], ['js', 'sync:reload']);
+    gulp.watch([srcPathList.scss], ['scss']);
+    gulp.watch([srcPathList.js], ['js']);
 });
 
 gulp.task('sync', () => {
     sync.init({
 		server: {
 			baseDir: distPath,
-			index: 'index.html'
+            index: 'index.html'
         },
         files: [
-            `${distPath}index.html`,
-            `${distPath}**/index.html`
+            `${distPath}**/*`
         ]
 	});
 });
 
 gulp.task('sync:reload', () => {
-    sync.reload();
+    // sync.reload();
 });
 
 gulp.task('default', () => {
