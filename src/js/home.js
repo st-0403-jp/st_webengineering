@@ -15,20 +15,26 @@
         var nameTarget_child = 'is_animation_child';
         var animationTime = 8000;
         var getData = UTILITY.getLocalSt('landing');
+        var newDate = new Date();
+        var toTime = newDate.getTime();
         var saveData = {
             is: true,
             date: toTime
         };
-
-        var newDate = new Date();
-        var toTime = newDate.getTime();
-
-        newDate.setDate(newDate.getDate() + 7);
         var storageDate = new Date(getData.date);
+        var calcDate = newDate.getDate() - storageDate.getDate();
 
-        var calcDate = newDate.getDate() - storageDate.getDate()
+        console.log(calcDate);
+        var isAnimation = null;
+        if (getData) {
+            if (calcDate < 7) {
+                isAnimation = getData.is;
+            } else {
+                isAnimation = false;
+            }
+        }
 
-        if (getData && getData.is === true) {
+        if (typeof isAnimation === 'boolean' && isAnimation) {
             setTimeout(function () {
                 OPENING.do();
             }, 300);
