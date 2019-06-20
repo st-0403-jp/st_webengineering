@@ -26,7 +26,8 @@ function Utility () {
         if (key == null) {
             return null;
         }
-        return (localStorage.getItem(key)) ? JSON.parse(localStorage.getItem(key)) : null;
+        var getData = localStorage.getItem(key);
+        return (getData) ? JSON.parse(getData) : null;
     };
 };
 var UTILITY = new Utility();

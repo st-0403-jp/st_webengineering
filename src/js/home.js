@@ -15,26 +15,22 @@
         var nameTarget_child = 'is_animation_child';
         var animationTime = 8000;
         var getData = UTILITY.getLocalSt('landing');
+
         var newDate = new Date();
         var toTime = newDate.getTime();
-        var saveData = {
-            is: true,
-            date: toTime
-        };
-        var storageDate = new Date(getData.date);
-        var calcDate = newDate.getDate() - storageDate.getDate();
-
-        console.log(calcDate);
+        var storageTime = (getData) ? Number(getData) : 0;
+        var calcTime = toTime - storageTime;
+        var diffTime = 604800000;
         var isAnimation = null;
         if (getData) {
-            if (calcDate < 7) {
-                isAnimation = getData.is;
+            if (calcTime < diffTime) {
+                isAnimation = true;
             } else {
                 isAnimation = false;
             }
         }
 
-        if (typeof isAnimation === 'boolean' && isAnimation) {
+        if (isAnimation) {
             setTimeout(function () {
                 OPENING.do();
             }, 300);
@@ -58,7 +54,7 @@
         }, animationTime);
 
         $el.children().on('animationend', function () {
-            UTILITY.setLocalSt('landing', saveData);
+            UTILITY.setLocalSt('landing', toTime);
             return false;
         });
     };

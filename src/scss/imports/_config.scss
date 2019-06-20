@@ -138,19 +138,19 @@ $keytime-slideshow: 5s;
 
 @keyframes landing-child {
     0% {
-        transform: translate(0%);
+        transform: translate(0%, 0%);
     }
     10% { // 0.6
         transform: translate(-9%, 0%);
     }
     20% { // 1.2
-        transform: translate(-36%, 30%);
+        transform: translate(-33%, 30%);
     }
     30% { // 1.8
-        transform: translate(-61%, 30%);
+        transform: translate(-59%, 30%);
     }
     40% { // 2.4
-        transform: translate(-86%, 30%);
+        transform: translate(-84%, 30%);
     }
     50% { // 3
         transform: translate(-2%, 0%);
@@ -194,20 +194,8 @@ $keytime-slideshow: 5s;
     76% {
         transform: translate(-15%, 0%);
     }
-    78% {
-        transform: translate(-16%, 0%);
-    }
-    80% {
-        transform: translate(-17%, 0%);
-    }
-    82% {
-        transform: translate(-18%, 0%);
-    }
-    84% {
-        transform: translate(-19%, 0%);
-    }
     100% {
-        transform: translate(-19%, 0%);
+        transform: translate(-15%, 0%);
     }
 }
 
