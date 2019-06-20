@@ -1,10 +1,6 @@
 .cmn_loading {
     width: 100%;
     height: 100%;
-    // background: linear-gradient(45deg, $base-color 25%, transparent 25%, transparent 75%, $base-color 75%),
-    //             linear-gradient(45deg, $base-color 25%, transparent 25%, transparent 75%, $base-color 75%);
-    // background-size: 40px 40px;
-    // background-position: 0 0, 20px 20px;
     background-color: $base-color;
     position: fixed;
     top: 0;
@@ -288,48 +284,6 @@
         line-height: $base-sp-lineHeight;
     }
 }
-.cmn_box_01 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    height: 100%;
-    padding: 5px;
-    &_item {
-        width: 100%;
-        padding: 3% 0;
-    }
-}
-.cmn_box02 {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    height: 100%;
-    font-size: 0;
-    &_top, &_bottom {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-        height: 49.5%;
-        .img {
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            &.is_01, &.is_04 {
-                width: 65%;
-            }
-            &.is_02, &.is_03 {
-                width: calc(100% - 65% - 1%);
-                background: linear-gradient(45deg, $right-gray-color 25%, transparent 25%, transparent 75%, $right-gray-color 75%),
-                            linear-gradient(45deg, $right-gray-color 25%, transparent 25%, transparent 75%, $right-gray-color 75%);
-                background-size: 40px 40px;
-                background-position: 0 0, 20px 20px;
-            }
-        }
-    }
-}
 .back_to_home {
     padding: 72px 0;
     text-align: center;
@@ -340,7 +294,7 @@
 }
 .cmn_icon {
     display: inline-block;
-    font-family: FontAwesome, FontAwesome Brands;
+    font-family: FontAwesome;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -400,131 +354,7 @@
         background-image: url(/img/common/sns/logo_qiita.png);
     }
 }
-.cmn_modal {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-    &_inner {
-        width: 86vw;
-        height: calc(85vw / 1.5);
-        max-width: 850px;
-        max-height: calc(850px / 1.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-    }
-    &_body {
-        width: 100%;
-        height: 100%;
-        .img {
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-        }
-    }
-    &_close {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        top: -45px;
-        right: 0;
-        cursor: pointer;
-        &::before, &::after {
-            content: '';
-            display: inline-block;
-            width: 50%;
-            height: 1px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-        }
-        &::before {
-            transform: rotate(45deg);
-        }
-        &::after {
-            transform: rotate(-45deg);
-        }
-    }
-    &_prev, &_next {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        position: absolute;
-        left: 0;
-        bottom: -55px;
-        right: 0;
-        margin: auto;
-        &::after {
-            content: '';
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border: 20px solid transparent;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-        }
-    }
-    &_prev {
-        left: -150px;
-        &::after {
-            border-right-color: $base-color;
-            left: -25px;
-        }
-    }
-    &_next {
-        right: -150px;
-        &::after {
-            border-left-color: $base-color;
-            right: -25px;
-        }
-    }
-    &_paging {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        color: #fff;
-        position: absolute;
-        left: 0;
-        bottom: -55px;
-        right: 0;
-        margin: auto;
-        .current {
-            margin-right: 3px;
-        }
-        .all {
-            margin-left: 3px;
-        }
-    }
-}
 
 .cmn_opening {
     opacity: 0;
-}
-
-.cmn_space_half {
-    padding-left: 6px;
-}
-
-.cmn_space_full {
-    padding-left: 12px;
 }

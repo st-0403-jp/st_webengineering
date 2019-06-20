@@ -101,7 +101,7 @@
                 form.mailaddress.value = '';
                 form.content.value = '';
             }).fail(function () {
-                alert('送信失敗しました。');
+                alert('送信失敗しました。つながりにくくなっております。お手数ですが、お時間をあけてお試しくださいませ。');
             });
 
             return false;

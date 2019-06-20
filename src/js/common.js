@@ -1,7 +1,6 @@
 
 function Utility () {
     'use strict';
-    var _self = this;
     this.cssTranstionDuration = function ($targetEl, time) {
         if (!($targetEl instanceof jQuery) && $targetEl.length === 0) {
             return;
@@ -31,121 +30,6 @@ function Utility () {
     };
 };
 var UTILITY = new Utility();
-
-/**
- * スクロールストップクラス TODO: リリース時削除
- */
-function NoScroll () {
-    'use strict';
-    this.$html = null;
-    this.init = function () {
-        this.$html = $('html');
-    };
-    this.do = function () {
-        this.$html.addClass('is_no_scroll');
-    };
-    this.remove = function () {
-        this.$html.removeClass('is_no_scroll');
-    };
-};
-
-/**
- * モーダルクラス TODO: リリース時削除
- */
-function Modal () {
-    'use strict';
-    var $body = $('body');
-
-    this.el = '';
-    this.elName = 'js_cmn_modal';
-    this.elBody = 'js_cmn_modal_inner';
-    this.elClose = 'js_cmn_modal_close';
-    this.elPrev = 'js_cmn_modal_prev';
-    this.elNext = 'js_cmn_modal_next';
-    this.elCurrent = 'js_cmn_modal_current';
-    this.elAll = 'js_cmn_modal_all';
-
-    // <div class="cmn_modal">
-    //     <div class="cmn_modal_inner">
-    //         <span class="cmn_modal_close"></span>
-    //         <span class="cmn_modal_prev"></span>
-    //         <span class="cmn_modal_next"></span>
-    //         <div class="cmn_modal_paging">
-    //             <span class="current"></span>/<span class="all"></span>
-    //         </div>
-    //     </div>
-    // </div>
-
-    /**
-     * モーダルを準備
-     */
-    this.el = '<div class="cmn_modal ' + this.elName + '">';
-    this.el += '<div class="cmn_modal_inner">';
-    this.el += '<div class="cmn_modal_body ' + this.elBody + '">';
-    this.el += '</div>';
-    this.el += '<span class="cmn_modal_close ' + this.elClose + '"></span>';
-    this.el += '<span class="cmn_modal_prev ' + this.elPrev + '"></span>';
-    this.el += '<span class="cmn_modal_next ' + this.elNext + '"></span>';
-    this.el += '<div class="cmn_modal_paging"><span class="current ' + this.elCurrent + '"></span>/<span class="all ' + this.elAll + '"></span></div>';
-    this.el += '</div>';
-    this.el += '</div>';
-    $body.append(this.el);
-
-    /**
-     * モーダルを初期化
-     */
-    this.init = function () {
-        this.hide();
-
-        // 閉じる機能
-        var _self = this;
-        $('.' + _self.elClose).on('click.modal.close', function () {
-            _self.hide();
-        });
-    };
-
-    /**
-     * モーダルの機能
-     */
-    this.show = function () {
-        $('.' + this.elName).show();
-    };
-    this.hide = function () {
-        $('.' + this.elName).hide();
-    };
-    this.onPaging = function (callback) {
-        var _self = this;
-        function getCurrentVal () {
-            return Number($('.' + _self.elCurrent).html());
-        };
-        function getAllVal () {
-            return Number($('.' + _self.elAll).html());
-        };
-
-        $('.' + this.elPrev).on('click', function () {
-            var val = getCurrentVal();
-            if (val === 1) {
-                return;
-            }
-            val = val - 1;
-            $('.' + _self.elCurrent).html(val);
-            if (callback && typeof callback === 'function') {
-                callback(String(val));
-            }
-        });
-        $('.' + this.elNext).on('click', function () {
-            var val = getCurrentVal();
-            if (val === getAllVal()) {
-                return;
-            }
-            val = val + 1;
-            $('.' + _self.elCurrent).html(val);
-            if (callback && typeof callback === 'function') {
-                callback(String(val));
-            }
-        });
-    };
-};
 
 /**
  * 横幅でPCかSPか判定するクラス

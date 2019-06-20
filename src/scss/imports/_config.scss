@@ -3,10 +3,6 @@
     src: url('/fonts/Noto_Sans_JP/NotoSansJP-Regular.otf');
 }
 @font-face {
-    font-family: 'Lobster';
-    src: url('/fonts/Lobster/Lobster-Regular.ttf');
-}
-@font-face {
     font-family: 'Baloo Bhai';
     src: url('/fonts/Baloo_Bhai/BalooBhai-Regular.ttf');
 }
@@ -14,13 +10,8 @@
     font-family: 'FontAwesome';
     src: url('/fonts/font_awesome/fa-solid-900.ttf');
 }
-@font-face {
-    font-family: 'FontAwesome Brands';
-    src: url('/fonts/font_awesome/fa-brands-400.ttf');
-}
 
 $notoSansJp-fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-$lobster-fontFamily: 'Lobster', 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 $baloo-fontFamily: 'Baloo Bhai', 'Lobster', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 $base-fontSize: 14px;
 $base-color: #333;
@@ -41,54 +32,6 @@ $white-text-shadow: 5px 5px 20px #fff;
 $globalheader-height: 80px;
 $icon-size-m: 3rem;
 $icon-size-s: 2rem;
-
-$keytime-slideshow: 5s;
-@keyframes fadeout {
-    0% {
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes fadein {
-    0% {
-        opacity: 0;
-    }
-    70% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes auto-photo {
-    0% {
-        transform: translateX(50vw);
-    }
-    50% {
-        transform: translateX(-70%);
-    }
-    100% {
-        transform: translateX(50vw);
-    }
-}
-
-@keyframes auto-photo-sp {
-    0% {
-        transform: translateX(50vw);
-    }
-    50% {
-        transform: translateX(-350vw);
-    }
-    100% {
-        transform: translateX(50vw);
-    }
-}
 
 @keyframes loading {
     0% {
