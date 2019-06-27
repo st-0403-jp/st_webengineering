@@ -1,0 +1,26 @@
+.globalheader {
+
+    nav {
+
+        .hamburger {
+
+            .line {
+                background-color: #fff;
+            }
+        }
+
+        ul {
+            
+            li {
+
+                a {
+                    color: #fff;
+
+                    &::before {
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

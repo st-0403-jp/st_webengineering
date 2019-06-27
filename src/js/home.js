@@ -53,7 +53,7 @@
             }, 300);
         }, animationTime);
 
-        $el.children().on('animationend', function () {
+        $el.children().on('animationend webkitAnimationEnd mozAnimationEnd', function () {
             UTILITY.setLocalSt('landing', toTime);
             return false;
         });
