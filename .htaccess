@@ -1,0 +1,5 @@
+AuthUserfile .htpasswd
+AuthGroupfile /dev/null
+AuthName "ID and password ??"
+AuthType Basic
+require valid-user
