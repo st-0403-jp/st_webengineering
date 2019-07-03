@@ -6,6 +6,7 @@
   "scripts": {
     "prestart": "run-p delete",
     "start": "run-s build:html build:sync",
+    "up": "run-s build:html build:build",
     "build:html": "node compile.js",
     "build:sync": "gulp",
     "build:build": "gulp build",
