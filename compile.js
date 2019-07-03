@@ -20,11 +20,36 @@ const mainList = [
 const worksList = [
     {
         id: 'prolab',
+        link: 'https://prolabo.co.jp/',
         explain: '知り合いのフリーランスの方からいただいたお仕事です。<br>内容は、Webサイトのコーディングで、主にホーム画面とメッセージ画面をコーディングしました。<br>最終的にWordPressにするということで、PHPを少し書いてますが、ほぼ、UI部分（HTML, CSS, JavaScript）の作成です。レスポンシブ対応してますが、デザインが素晴らしかったのでサクッとできました。<br>要件のヒアリングが足りてなく、アニメーションの処理で手間取ったので、少し口数が膨らみましたが、そこまで問題にはならずよかったです。'
     },
     {
         id: 'nab',
+        link: 'https://nab.tokyo/',
         explain: '知り合いの会社からいただいたお仕事です。会社の代表の方には色々よくしてもらっています。内容はWebサイトの制作です。<br>WordPressの有料テンプレートを使用したので、コーディングはほぼしていません。<br>検索機能はテンプレートに最初から入っており、マップはGoogleへ登録してキーを入れればすぐ入るようになってます。WordPress導入する上で有料テンプレートはかなり高機能だと感じた案件でした。'
+    }
+];
+
+const snsList = [
+    {
+        name: 'facebook',
+        link: 'https://www.facebook.com/satoru.tanaka.sss/'
+    },
+    {
+        name: 'twitter',
+        link: 'https://twitter.com/sato272015/'
+    },
+    {
+        name: 'instagram',
+        link: 'https://www.instagram.com/satoru.tanaka.sss/'
+    },
+    {
+        name: 'github',
+        link: 'https://github.com/st-0403-jp/'
+    },
+    {
+        name: 'qiita',
+        link: 'https://qiita.com/st-0403-jp/'
     }
 ];
 
@@ -64,9 +89,26 @@ const generateScript = (page) => {
 };
 
 const generateMain = (page, dom) => {
+
+    if (page === 'home' || page === 'contact') {
+        snsList.forEach((sns) => {
+            const el = useDoc(dom).querySelector(`.compile_link_${sns.name}`);
+            if (el) {
+                el.href = sns.link;
+            }
+        });
+    }
+
     if (page === 'home' || page === 'works') {
         worksList.forEach((item) => {
-            useDoc(dom).querySelector(`.compile_txt_${item.id}`).innerHTML = item.explain;
+            const elTxt = useDoc(dom).querySelector(`.compile_txt_${item.id}`);
+            const elLink = useDoc(dom).querySelector(`.compile_link_${item.id}`);
+            if (elTxt) {
+                elTxt.innerHTML = item.explain;
+            }
+            if (elLink) {
+                elLink.href = item.link;
+            }
         });
     }
 
