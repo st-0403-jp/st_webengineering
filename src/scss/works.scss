@@ -16,17 +16,20 @@ h1 {
     article {
 
         .article_item {
-            display: flex;
-            width: 100%;
-            max-width: 1000px;
-            height: 400px;
-            margin: 0 auto 56px;
-            padding-top: 24px;
 
-            @include mediaSp() {
-                flex-wrap: wrap;
-                height: auto;
-                margin: 0 auto 32px;
+            > a {
+                display: flex;
+                width: 100%;
+                max-width: 1000px;
+                height: 400px;
+                margin: 0 auto 56px;
+                padding-top: 24px;
+
+                @include mediaSp() {
+                    flex-wrap: wrap;
+                    height: auto;
+                    margin: 0 auto 32px;
+                }
             }
 
             &_img {
