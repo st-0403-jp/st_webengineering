@@ -47,16 +47,18 @@
 
         setTimeout(function () {
             $el.removeClass(nameTarget).children().removeClass(nameTarget_child);
+            UTILITY.setLocalSt('landing', toTime);
             setTimeout(function () {
                 OPENING.do();
                 $body.removeClass('is_landing');
             }, 300);
         }, animationTime);
 
-        $el.children().on('animationend webkitAnimationEnd mozAnimationEnd', function () {
-            UTILITY.setLocalSt('landing', toTime);
-            return false;
-        });
+        // TODO: setTimeoutをやめる
+        // $el.children().on('animationend webkitAnimationEnd mozAnimationEnd', function () {
+        //     UTILITY.setLocalSt('landing', toTime);
+        //     return false;
+        // });
     };
 
     function slider () {
