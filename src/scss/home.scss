@@ -93,7 +93,12 @@ body {
                     }
 
                     img {
-                        width: 200px;
+                        width: auto;
+                        height: 200px;
+
+                        @include mediaSp () {
+                            height: 130px;
+                        }
                     }
                 }
 

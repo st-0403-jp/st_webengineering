@@ -47,16 +47,16 @@ h1 {
     flex-wrap: wrap;
 
     &_img {
-        width: 300px;
+        width: 200px;
 
         @include mediaSp() {
-            width: 100%;
-            margin-bottom: 16px;
+            width: 50%;
+            margin: 0 auto 16px;
         }
     }
 
     &_txt {
-        width: calc(100% - 300px);
+        width: calc(100% - 200px);
         padding-left: 32px;
 
         @include mediaSp() {
