@@ -222,11 +222,7 @@ body {
                 }
 
                 &_sns {
-                    margin-top: 80px;
-
-                    @include mediaSp() {
-                        margin-top: 32px;
-                    }
+                    margin-top: 32px;
 
                     &_list {
                         display: flex;
