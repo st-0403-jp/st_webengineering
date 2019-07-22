@@ -64,9 +64,10 @@ h1 {
             padding-left: 0;
         }
 
-        &_history {
+        &_definition_list {
             display: flex;
             flex-wrap: wrap;
+            word-break: break-all;
 
             &_title {
                 width: 100%;
