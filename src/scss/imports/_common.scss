@@ -193,6 +193,10 @@
                 margin: 0 0 8px 8px;
                 position: relative;
 
+                &:not(:first-child) {
+                    font-size: 0.9rem;
+                }
+
                 &::before {
                     content: '';
                     display: inline-block;

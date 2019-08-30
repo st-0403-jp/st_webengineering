@@ -21,9 +21,14 @@ body {
 }
 
 .slider {
-    width: 400vw;
-    height: 100vh;
-    background-color: #fff;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &_inner {
+        width: 400vw;
+        height: 100vh;
+        background-color: #fff;
+    }
 
     &_list {
         width: 100%;
@@ -72,6 +77,7 @@ body {
 
                     @include mediaSp() {
                         flex-wrap: wrap;
+                        margin-bottom: 24px;
                     }
                 }
 
@@ -251,38 +257,27 @@ body {
                     }
                 }
             }
-            .paging {
+            .scroll_right {
 
-                .prev, .next {
+                .arrow_right {
                     font-family: FontAwesome;
                     font-size: $icon-size-m;
                     display: inline-block;
                     height: $icon-size-m;
                     position: absolute;
-                    top: 0;
+                    top: 10rem;
                     bottom: 0;
-                    margin: auto;
-                    cursor: pointer;
-
-                    @include mediaSp() {
-                        top: auto;
-                        bottom: 32px;
-                    }
-                }
-
-                .prev {
-                    left: 3vw;
-
-                    &::before {
-                        content: '\f0a8';
-                    }
-                }
-
-                .next {
                     right: 3vw;
+                    margin: auto;
+                    animation: spring-x-left 1s ease-in-out infinite;
+                    cursor: pointer;
 
                     &::before {
                         content: '\f0a9';
+                    }
+
+                    @include mediaSp() {
+                        cursor: auto;
                     }
                 }
             }
