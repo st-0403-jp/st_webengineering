@@ -269,7 +269,7 @@ body {
                     bottom: 0;
                     right: 3vw;
                     margin: auto;
-                    animation: spring-x-left 1s ease-in-out infinite;
+                    animation: spring-x-left 1s steps(1) infinite;
                     cursor: pointer;
 
                     &::before {
