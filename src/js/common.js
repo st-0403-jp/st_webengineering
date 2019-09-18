@@ -1,3 +1,28 @@
+function checkWindow () {
+    'use strict';
+    // if (console.log == null) {
+    //     console.log = function (log) { return log; };
+    // }
+    // if (console.error == null) {
+    //     console.error = console.log;
+    // }
+    // if (console.info == null) {
+    //     console.info = console.log;
+    // }
+    this.isLocalStorage = function () {
+        if (window.localStorage != null) {
+            return true;
+        }
+        // try {
+        //     throw new Error('ローカルストレージが使えません。');
+        // } catch {
+        //     return false;
+        // }
+        return false;
+    };
+};
+var CHECK_WINDOW = new checkWindow();
+var IS_LOCAL_STORAGE = CHECK_WINDOW.isLocalStorage();
 
 function Utility () {
     'use strict';
