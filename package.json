@@ -1,7 +1,7 @@
 {
   "name": "st_webengineering",
   "version": "1.0.0",
-  "description": "a",
+  "description": "st_webengineeringのホームページです。st_webengineeringは、田中暁のフリーランスの屋号です。",
   "main": "index.js",
   "scripts": {
     "prestart": "run-p delete",
@@ -15,7 +15,7 @@
     "watch:html": "watch \"npm run build:html\" ./src/",
     "test": "run-p delete build:build"
   },
-  "author": "a",
+  "author": "tanaka-satoru",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
