@@ -17,11 +17,18 @@ const mainList = [
     srcDir + 'contact/index.html'
 ];
 
+const displayPageList = [
+    ['home', 'Home'],
+    ['about', 'About'],
+    ['works', 'Works'],
+    ['contact', 'Contact'],
+];
+
 const worksList = [
     {
         id: 'prolab',
         link: 'https://prolabo.co.jp/',
-        explain: '知り合いのフリーランスの方からいただいたお仕事です。<br>内容は、Webサイトのコーディングで、主にホーム画面とメッセージ画面をコーディングしました。<br>最終的にWordPressにするということで、PHPを少し書いてますが、ほぼ、UI部分（HTML, CSS, JavaScript）の作成です。レスポンシブ対応してますが、デザインが素晴らしかったのでサクッとできました。<br>要件のヒアリングが足りてなく、アニメーションの処理で手間取ったので、少し口数が膨らみましたが、そこまで問題にはならずよかったです。'
+        explain: '知り合いのフリーランスの方からいただいたお仕事です。<br>内容は、Webサイトのコーディングで、主にホーム画面とメッセージ画面をコーディングしました。<br>最終的にWordPressにするということで、PHPを少し書いてますが、ほぼ、UI部分（HTML, CSS, JavaScript）の作成です。レスポンシブ対応してますが、デザインが素晴らしかったのでサクッとできました。<br>要件のヒアリングが足りてなく、アニメーションの処理で手間取ったので、少し工数が膨らみましたが、そこまで問題にはならずよかったです。'
     },
     {
         id: 'nab',
@@ -53,6 +60,12 @@ const snsList = [
     }
 ];
 
+const mkdirDist = () => {
+    if (!fs.existsSync('dist')) {
+        fs.mkdirSync('dist');
+    }
+};
+
 const makeUrl = (page) => {
     const domain = 'https://www.sssatoru-t.info/';
 
@@ -72,12 +85,13 @@ const useDoc = (dom) => {
 const generateHead = (page) => {
     const headDom = new JSDOM(head);
     const url = makeUrl(page);
+    const pageTitleMap = new Map(displayPageList);
 
     useDoc(headDom).querySelector('#ogTitle').content = `${page}`;
     useDoc(headDom).querySelector('#ogUrl').content = `${url}`;
     useDoc(headDom).querySelector('link[rel=canonical]').href = `${url}`;
     useDoc(headDom).querySelector('link[rel=stylesheet]').href = `/css/${page}.css`;
-    useDoc(headDom).querySelector('title').innerHTML = `${page} | ST WebEngineering`;
+    useDoc(headDom).querySelector('title').innerHTML = `${pageTitleMap.get(page)} | ST WebEngineering`;
     return useDoc(new JSDOM(headDom.serialize())).querySelector('head').innerHTML;
 };
 
@@ -89,7 +103,6 @@ const generateScript = (page) => {
 };
 
 const generateMain = (page, dom) => {
-
     if (page === 'home' || page === 'contact') {
         snsList.forEach((sns) => {
             const el = useDoc(dom).querySelector(`.compile_link_${sns.name}`);
@@ -152,6 +165,8 @@ const create = (err, mainTemp) => {
     }
 };
 
+// convert
+mkdirDist();
 mainList.forEach((path) => {
     fs.readFile(path, 'utf-8', create);
 });
