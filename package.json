@@ -1,7 +1,7 @@
 {
   "name": "st_webengineering",
   "version": "1.0.0",
-  "description": "st_webengineeringのホームページです。st_webengineeringは、田中暁のフリーランスの屋号です。",
+  "description": "Portfolio site by Satoru Tanaka",
   "main": "index.js",
   "scripts": {
     "prestart": "run-p delete",

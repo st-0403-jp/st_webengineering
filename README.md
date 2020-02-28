@@ -1,11 +1,31 @@
-# ST WebEngineering
-このリポジトリは、ST WebEngineeringのウェブサイトです。
-ST WebEngineeringは、私、田中暁（Tanaka Satoru）の屋号名です。
-私が行うWeb開発のことと私自身のことを少し載せてます。
-ぜひ、一度ご覧になってください。[こちら](https://www.sssatoru-t.info/)
+# ST_WebEngineering
 
-# 開発環境
-- node.js
-  - v10.0.0
-- 他
-  - package.jsを確認
+Portfolio site by Satoru Tanaka.
+[go to site](https://www.sssatoru-t.info/)
+
+## Overview
+
+This is portfolio site by satoru tanaka.
+To put it simply, website about my job.
+
+## Environment for develop
+
+```
+MacOS: OS X El Capitan ~
+Node.js: v10.0.0 ~
+```
+
+## Starting develop
+
+```
+$ npm install
+$ npm start
+```
+
+## Building app for static web site
+
+```
+$ npm install
+$ npm run up
+```
+
