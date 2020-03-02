@@ -103,23 +103,24 @@ function StopLoading () {
     'use strict';
     var $w = $(window),
         $el = $('.js_cmn_loading'),
-        transitionTime = 1000;
+        transitionTime = 1500,
+        isExist = $el.length === 0 ? false : true;
     this.init = function () {
-        if ($el.length === 0) {
+        if (!isExist) {
             return;
         }
-        UTILITY.cssTranstionDuration($el, transitionTime);
-    };
-    this.show = function () {
-        $el.removeClass('is_hide is_none');
+        // UTILITY.cssTranstionDuration($el, transitionTime);
     };
     this.hide = function () {
-        $el.addClass('is_hide');
+        // $el.addClass('is_hide');
         setTimeout(function () {
             $el.addClass('is_none');
         }, transitionTime);
     };
     this.setEvent = function (callback) {
+        if (!isExist) {
+            return;
+        }
         var _self = this;
         $w.on('load.stop.loading', function () {
             _self.hide();
@@ -143,7 +144,7 @@ function Opening () {
     var _self = this,
         $header = $('header'),
         $footer = $('footer'),
-        transitionTime = 500;
+        transitionTime = 300;
     this.elName = 'cmn_opening';
     this.init = function () {
         $header.addClass(_self.elName);
