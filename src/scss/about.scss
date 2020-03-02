@@ -72,9 +72,15 @@ h1 {
                 width: 100%;
             }
 
-            &_year {
+            &_paragraph {
+                width: 100%;
+                margin-left: 16px;
+            }
+
+            &_key {
                 width: 100px;
                 margin-left: 16px;
+                color: $right-gray-color;
             }
 
             &_exp {

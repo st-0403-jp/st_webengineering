@@ -4,14 +4,6 @@
 @import 'imports/base';
 @import 'imports/common';
 
-body {
-    background-color: $base-color;
-
-    &.is_landing {
-        background-color: $orange-color;
-    }
-}
-
 .home_main {
     transition: all .5s;
 }
