@@ -22,6 +22,10 @@
             bottom: 0;
             right: 0;
             margin: auto;
+
+            @include mediaSp() {
+                width: $icon-size-s;
+            }
         }
 
         .cmn_icon {
@@ -31,6 +35,10 @@
             width: 100%;
             text-align: center;
 
+            @include mediaSp() {
+                font-size: $icon-size-s;
+            }
+
             &::before {
                 display: inline-block;
                 width: 100%;
@@ -38,11 +46,19 @@
     
             &.is_top {
                 bottom: 32px;
+
+                @include mediaSp() {
+                    bottom: 16px;
+                }
             }
     
             &.is_middle {
                 bottom: 16px;
                 animation-delay: 0.5s;
+
+                @include mediaSp() {
+                    bottom: 8px;
+                }
             }
     
             &.is_bottom {
