@@ -20,6 +20,7 @@
         display: none;
     }
 }
+
 .globalheader {
     width: 100%;
     height: $globalheader-height;
@@ -178,6 +179,7 @@
         }
     }
 }
+
 .globalfooter {
     margin-top: 24px;
     padding: 24px 3vw 24px;
@@ -231,6 +233,7 @@
         text-align: right;
     }
 }
+
 .cmn_heading01 {
     font-size: 3rem;
     text-align: center;
@@ -242,6 +245,7 @@
         margin-bottom: 24px;
     }
 }
+
 .cmn_btn01 {
     display: inline-block;
     font-size: .8rem;
@@ -293,6 +297,7 @@
         }
     }
 }
+
 .cmn_paragraph01 {
     line-height: $base-lineHeight;
 
@@ -300,6 +305,7 @@
         line-height: $base-sp-lineHeight;
     }
 }
+
 .back_to_home {
     padding: 72px 0;
     text-align: center;
@@ -308,6 +314,7 @@
         padding: 36px 0;
     }
 }
+
 .cmn_icon {
     display: inline-block;
     font-family: FontAwesome;
@@ -360,6 +367,13 @@
 
         &::before {
             content: '\f110';
+        }
+    }
+
+    &.is_chevron-down {
+        
+        &::before {
+            content: '\f078';
         }
     }
 
