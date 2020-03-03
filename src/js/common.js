@@ -103,33 +103,14 @@ function StopLoading () {
     'use strict';
     var $w = $(window),
         $el = $('.js_cmn_loading'),
-        transitionTime = 1500,
         isExist = $el.length === 0 ? false : true;
     this.init = function () {
-        if (!isExist) {
-            return;
-        }
+        if (!isExist) return;
         // UTILITY.cssTranstionDuration($el, transitionTime);
     };
     this.hide = function () {
         // $el.addClass('is_hide');
-        setTimeout(function () {
-            $el.addClass('is_none');
-        }, transitionTime);
-    };
-    this.setEvent = function (callback) {
-        if (!isExist) {
-            return;
-        }
-        var _self = this;
-        $w.on('load.stop.loading', function () {
-            _self.hide();
-            setTimeout(function () {
-                if (callback && typeof callback === 'function') {
-                    callback();
-                }
-            }, transitionTime);
-        });
+        $el.addClass('is_none');
     };
     this.offEvent = function () {
         $w.off('.stop.loading');
@@ -141,24 +122,19 @@ function StopLoading () {
  */
 function Opening () {
     'use strict';
-    var _self = this,
-        $header = $('header'),
-        $footer = $('footer'),
-        transitionTime = 300;
-    this.elName = 'cmn_opening';
-    this.init = function () {
-        $header.addClass(_self.elName);
-        $footer.addClass(_self.elName);
-        UTILITY.cssTranstionDuration($('.' + _self.elName), transitionTime);
-    };
+    var _self = this;
+    var elName = 'cmn_opening';
+    var $el = $('.' + elName);
+    var isExist = $el.length === 0 ? false : true;
     this.do = function () {
-        $header.removeClass(_self.elName);
-        $footer.removeClass(_self.elName);
+        if (!isExist) return;
+        $el.addClass('is_show');
+        $el.addClass('is_show');
     };
 };
 
 /**
- * クラスの初期化
+ * インスタンス
  */
 var JUDGE_DEVICE = new JudgeDevice();
 var RESPONSIVE = new Responsive();
@@ -168,12 +144,10 @@ var OPENING = new Opening();
 // 共通処理
 (function () {
     'use strict';
+
+    // 初期化
     JUDGE_DEVICE.init();
     STOP_LOADING.init();
-    OPENING.init();
-
-    // ローディングをストップするイベント設置
-    STOP_LOADING.setEvent(OPENING.do);
 
     function cmnClickHamburger () {
         var $el = $('.js_hamburger');
@@ -189,5 +163,13 @@ var OPENING = new Opening();
 
     RESPONSIVE.start(function () {
         JUDGE_DEVICE.init();
+    });
+
+    // ローディングをストップするイベント設置
+    $(window).on('load', function () {
+        STOP_LOADING.hide();
+        setTimeout(function () {
+            OPENING.do();
+        }, 500);
     });
 })();

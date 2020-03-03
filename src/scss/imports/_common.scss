@@ -24,7 +24,6 @@
 .globalheader {
     width: 100%;
     height: $globalheader-height;
-    // position: relative;
     position: absolute;
     z-index: 100;
 
@@ -410,4 +409,9 @@
 
 .cmn_opening {
     opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &.is_show {
+        opacity: 1;
+    }
 }
