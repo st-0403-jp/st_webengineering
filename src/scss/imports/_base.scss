@@ -9,13 +9,11 @@ html {
     font-size: $base-fontSize;
     color: $base-color;
     letter-spacing: $base-letterSpacing;
-    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
 
 body {
     width: 100%;
-    overflow: hidden;
 }
 
 a, a:link, a:visited {

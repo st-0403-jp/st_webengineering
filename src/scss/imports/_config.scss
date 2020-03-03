@@ -39,8 +39,23 @@ $icon-size-s: 2rem;
     0% {
         transform: rotate(0);
     }
+    90% {
+        transform: rotate(360deg);
+    }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes scrolldown {
+    0% {
+        color: $base-color;
+    }
+    50% {
+        color: $orange-color;
+    }
+    100% {
+        color: $base-color;
     }
 }
 
