@@ -1,3 +1,4 @@
+'use strict';
 const gulp = require("gulp");
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
@@ -36,7 +37,22 @@ gulp.task('scss', () => {
             .pipe(gulp.dest(distPath));
 });
 
+gulp.task('scss:dist', () => {
+    return gulp.src([srcPathList.scss], {base: srcPath})
+            .pipe(sass({outputStyle: 'compressed'}))
+            .pipe(rename((path) => {
+                let p = path;
+                p.dirname = p.dirname.replace('scss', 'css');
+            }))
+            .pipe(gulp.dest(distPath));
+});
+
 gulp.task('js', () => {
+    return gulp.src([srcPathList.js], {base: srcPath})
+            .pipe(gulp.dest(distPath));
+});
+
+gulp.task('js:dist', () => {
     return gulp.src([srcPathList.js], {base: srcPath})
             .pipe(uglify())
             .pipe(gulp.dest(distPath));
@@ -81,6 +97,6 @@ gulp.task('default', () => {
     runSequence(['scss', 'js', 'copy'], 'watch', 'sync');
 });
 
-gulp.task('build', () => {
-    runSequence(['scss', 'js', 'copy']);
+gulp.task('dist', () => {
+    runSequence(['scss:dist', 'js:dist', 'copy']);
 });
