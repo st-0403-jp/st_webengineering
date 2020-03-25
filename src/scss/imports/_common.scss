@@ -75,6 +75,16 @@
             right: 0;
             cursor: pointer;
 
+            &:hover {
+
+                .line:first-child {
+                    transform: translateY(-5px) scale(1.1, 1.1);
+                }
+                .line:last-child {
+                    transform: translateY(5px) scale(1.1, 1.1);
+                }
+            }
+
             &.is_show {
                 .line:first-child {
                     transform: translateY(10px) rotate(45deg);
