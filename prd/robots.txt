@@ -1,7 +1,3 @@
 User-Agent: *
-Disallow: /img/
-Disallow: /fonts/
-Disallow: /css/
-Disallow: /js/
-Disallow: /lib/
+Disallow:
 Sitemap: https://www.sssatoru-t.info/sitemap.xml
